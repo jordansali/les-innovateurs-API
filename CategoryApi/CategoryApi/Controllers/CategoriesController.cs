@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CategoryApi.Models;
+using System.Linq.Expressions;
 
 namespace CategoryApi.Controllers
 {
@@ -26,12 +27,19 @@ namespace CategoryApi.Controllers
         {
             var results = await _context.Category.ToListAsync();
 
-            if(results == null)
-            {
-                return BadRequest();
-            }
+            try {
+                if (results == null)
+                {
+                    return NotFound("Object not found, please check request");
+                }
 
-            return Ok(results);
+                return Ok(results);
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
+            }
+            
         }
 
         // GET: api/Categories/5
@@ -87,7 +95,7 @@ namespace CategoryApi.Controllers
         {
             if (id != category.CategoryId)
             {
-                return BadRequest();
+                return BadRequest("Not allowed or request not accepted");
             }
 
             _context.Entry(category).State = EntityState.Modified;
@@ -100,7 +108,7 @@ namespace CategoryApi.Controllers
             {
                 if (!CategoryExists(id))
                 {
-                    return NotFound();
+                    return NotFound("Item not found, please check request");
                 }
                 else
                 {
@@ -120,7 +128,10 @@ namespace CategoryApi.Controllers
             _context.Category.Add(category);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+            var new_category = CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+
+            //*******needs string uri*********
+            return Created("..", new_category);
         }
 
         // DELETE: api/Categories/5
@@ -130,7 +141,7 @@ namespace CategoryApi.Controllers
             var category = await _context.Category.FindAsync(id);
             if (category == null)
             {
-                return NotFound();
+                return NotFound("Database not found, please check request");
             }
 
             _context.Category.Remove(category);
