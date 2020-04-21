@@ -1,0 +1,112 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+
+namespace CategoryApi.Models
+{
+    public partial class AMCDbContext : DbContext
+    {
+        public AMCDbContext()
+        {
+        }
+
+        public AMCDbContext(DbContextOptions<AMCDbContext> options)
+            : base(options)
+        {
+        }
+
+        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Questions> Questions { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=ssjdnv;database=jeopardy", x => x.ServerVersion("10.4.12-mariadb"));
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("category");
+
+                entity.Property(e => e.CategoryId)
+                    .HasColumnName("category_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.TitleEn)
+                    .HasColumnName("title_en")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.TitleFr)
+                    .HasColumnName("title_fr")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+            });
+
+            modelBuilder.Entity<Questions>(entity =>
+            {
+                entity.HasKey(e => e.QuestionId)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("questions");
+
+                entity.HasIndex(e => e.CategoryId)
+                    .HasName("category_id");
+
+                entity.Property(e => e.QuestionId)
+                    .HasColumnName("question_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.AnswerEn)
+                    .HasColumnName("answer_en")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.AnswerFr)
+                    .HasColumnName("answer_fr")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.CategoryId)
+                    .HasColumnName("category_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DifficultyVal)
+                    .HasColumnName("difficulty_val")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.TextEn)
+                    .HasColumnName("text_en")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.TextFr)
+                    .HasColumnName("text_fr")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.Questions)
+                    .HasForeignKey(d => d.CategoryId)
+                    .HasConstraintName("questions_ibfk_1");
+            });
+
+            OnModelCreatingPartial(modelBuilder);
+        }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    }
+}
