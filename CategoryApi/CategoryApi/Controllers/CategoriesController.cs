@@ -39,11 +39,11 @@ namespace CategoryApi.Controllers
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
             }
-            
+
         }
 
         // GET: api/Categories/5
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -60,32 +60,34 @@ namespace CategoryApi.Controllers
                     return BadRequest();
                 }
 
+                //if id is not integer, return format not accepted status code
+
                 return Ok(category);
             }
             catch
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
             }
-           
+
         }
 
-     /*   [HttpGet("{title}")]
-        public async Task<ActionResult<Category>> GetCategory(string title)
-        {
-            var category = await _context.Category.FindAsync(title);
+        /*       [HttpGet("{title}")]
+               public async Task<ActionResult<Category>> GetCategory(string title)
+               {
+                   var category = await _context.Category.FindAsync(title);
 
-            if (category == null)
-            {
-                return NotFound("Object not found, please check request");
-            }
+                   if (category == null)
+                   {
+                       return NotFound("Object not found, please check request");
+                   }
 
-            if (title != category.TitleEn)
-            {
-                return BadRequest();
-            }
+                   if (title != category.TitleEn)
+                   {
+                       return BadRequest();
+                   }
 
-            return Ok(category);
-        } */
+                   return Ok(category);
+               }  */
 
         // PUT: api/Categories/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -93,8 +95,8 @@ namespace CategoryApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
-            
-            if(id == null)
+
+            if (id == null)
             {
                 return NotFound("Item not found, please check request");
             }
@@ -118,11 +120,15 @@ namespace CategoryApi.Controllers
                 }
                 else
                 {
-                    throw; 
+                    throw;
                 }
             }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
+            }
 
-           // return NoContent();
+            // return NoContent();
         }
 
         // POST: api/Categories
@@ -131,29 +137,44 @@ namespace CategoryApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            _context.Category.Add(category);
-            await _context.SaveChangesAsync();
 
-            var new_category = CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+            try {
+                _context.Category.Add(category);
+                await _context.SaveChangesAsync();
 
-            //*******needs string uri*********
-            return Created("..", new_category);
-        }
+                var new_category = CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+
+                //*******needs string uri*********
+                return Created(".../api/categories/", new_category);
+            }
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
+            }
+        } 
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Category>> DeleteCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
-            if (category == null)
-            {
-                return NotFound("Database not found, please check request");
+
+            try {
+                if (category == null)
+                {
+                    return NotFound("Database not found, please check request");
+                }
+
+                _context.Category.Remove(category);
+                await _context.SaveChangesAsync();
+
+                return Ok(category);
             }
-
-            _context.Category.Remove(category);
-            await _context.SaveChangesAsync();
-
-            return category;
+            catch
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "The Api is experiencing technical difficulties");
+            }
+            
         }
 
         private bool CategoryExists(int id)
