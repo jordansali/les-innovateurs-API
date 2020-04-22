@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CategoryApi.Models;
 using System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace CategoryApi.Controllers
 {
@@ -15,7 +17,17 @@ namespace CategoryApi.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly AMCDbContext _context;
+        
+        
+        //Logging console
+        private ILogger<ConsoleLoggerProvider> loggerConsole;
 
+        public CategoriesController(ILogger<ConsoleLoggerProvider> loggerConsole)
+        {
+            this.loggerConsole = loggerConsole;
+        }
+
+        //Categories controller context
         public CategoriesController(AMCDbContext context)
         {
             _context = context;
