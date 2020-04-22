@@ -43,7 +43,7 @@ namespace CategoryApi.Controllers
         }
 
         // GET: api/Categories/5
-        [HttpGet("{id: int}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -69,7 +69,7 @@ namespace CategoryApi.Controllers
            
         }
 
-        [HttpGet("{title}")]
+     /*   [HttpGet("{title}")]
         public async Task<ActionResult<Category>> GetCategory(string title)
         {
             var category = await _context.Category.FindAsync(title);
@@ -85,7 +85,7 @@ namespace CategoryApi.Controllers
             }
 
             return Ok(category);
-        }
+        } */
 
         // PUT: api/Categories/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -93,6 +93,11 @@ namespace CategoryApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
+            
+            if(id == null)
+            {
+                return NotFound("Item not found, please check request");
+            }
             if (id != category.CategoryId)
             {
                 return BadRequest("Not allowed or request not accepted");
@@ -103,6 +108,7 @@ namespace CategoryApi.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                return Ok();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -112,11 +118,11 @@ namespace CategoryApi.Controllers
                 }
                 else
                 {
-                    throw;
+                    throw; 
                 }
             }
 
-            return NoContent();
+           // return NoContent();
         }
 
         // POST: api/Categories
