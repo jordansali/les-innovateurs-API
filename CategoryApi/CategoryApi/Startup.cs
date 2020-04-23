@@ -36,6 +36,19 @@ namespace CategoryApi
                 .UseMySql("Server=localhost; Database=jeopardy;User=root;Password=ssjdnv;",
                     mysqlOptions =>
                         mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
+
+            services.AddSwaggerGen(setupAction =>
+            {
+                setupAction.SwaggerDoc("CategorySpec",
+                new Microsoft.OpenApi.Models.OpenApiInfo()
+                {    
+                    Title = "CategoryApi",
+                    Version = "1"
+               
+            });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +61,15 @@ namespace CategoryApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("swagger/CategorySpec/swagger.json",
+                "CategoryApi");
+                setupAction.RoutePrefix = ""; //will make swagger availiable at root
+            });
 
             app.UseRouting();
 

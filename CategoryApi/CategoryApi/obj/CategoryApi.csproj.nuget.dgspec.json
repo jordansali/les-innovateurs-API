@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shani\\source\\repos\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
+    "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shani\\source\\repos\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
+    "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "projectUniqueName": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
         "projectName": "CategoryApi",
-        "projectPath": "C:\\Users\\Shani\\source\\repos\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
-        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shani\\source\\repos\\CategoryApi\\CategoryApi\\obj\\",
+        "projectPath": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "packagesPath": "C:\\Users\\selin\\.nuget\\packages\\",
+        "outputPath": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\selin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +38,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Api.Analyzers": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -69,6 +79,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.3.3, )"
             }
           },
           "imports": [
