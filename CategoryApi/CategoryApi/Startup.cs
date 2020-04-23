@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CategoryApi.Models;
 using Microsoft.AspNetCore.Builder;
@@ -37,16 +39,31 @@ namespace CategoryApi
                     mysqlOptions =>
                         mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
 
-            services.AddSwaggerGen(setupAction =>
-            {
-                setupAction.SwaggerDoc("CategorySpec",
-                new Microsoft.OpenApi.Models.OpenApiInfo()
-                {    
-                    Title = "CategoryApi",
-                    Version = "1"
-               
-            });
-            });
+              services.AddSwaggerGen(setupAction =>
+              {
+                  setupAction.SwaggerDoc("CategorySpec",
+                 new Microsoft.OpenApi.Models.OpenApiInfo()
+                 {
+                     Title = "Category API",
+                     Version = "beta",
+                     Description = "Through this API you can access authors and books.",
+                     Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                     {
+                         Email = "Jordan.sali@canada.ca",
+                         Name = "Jordan Sali",
+                         Url = new Uri("https://twitter.com/CNSC_CCSN")
+                     },
+                     License = new Microsoft.OpenApi.Models.OpenApiLicense()
+                     {
+                         Name = "MIT License",
+                         Url = new Uri("https://opensource.org/licenses/MIT")
+                     }
+                 });
+                  var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                  var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+                  setupAction.IncludeXmlComments(xmlCommentsFullPath);
+
+              });
 
 
         }

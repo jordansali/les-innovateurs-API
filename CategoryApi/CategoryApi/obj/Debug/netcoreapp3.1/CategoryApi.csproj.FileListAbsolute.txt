@@ -305,3 +305,4 @@ H:\Source\Repos\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp
 H:\Source\Repos\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.pdb
 H:\Source\Repos\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.genruntimeconfig.cache
 H:\Source\Repos\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.csprojAssemblyReference.cache
+H:\Source\Repos\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\CategoryApi.xml

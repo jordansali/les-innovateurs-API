@@ -14,8 +14,13 @@ namespace CategoryApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public class CategoriesController : ControllerBase
     {
+    
+
         private readonly AMCDbContext _context;
         
         
@@ -30,7 +35,13 @@ namespace CategoryApi.Controllers
         }
 
         // GET: api/Categories
-        [HttpGet]
+        ///<summary>
+        ///Get list of all Category
+        ///</summary>
+        ///<returns>list of json </returns>
+        ///<remarks>could put some sample request here  '\' is a line break to make the sample more readable</remarks>
+
+            [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             var results = await _context.Category.ToListAsync();
