@@ -19,15 +19,11 @@ namespace CategoryApi.Controllers
         private readonly AMCDbContext _context;
         
         
-        //Logging console
-        private ILogger<ConsoleLoggerProvider> loggerConsole;
+        //Add Logging console provider
+       
 
-        public CategoriesController(ILogger<ConsoleLoggerProvider> loggerConsole)
-        {
-            this.loggerConsole = loggerConsole;
-        }
 
-        //Categories controller context
+        //Categories controller constructor with logger and context
         public CategoriesController(AMCDbContext context)
         {
             _context = context;
@@ -71,8 +67,6 @@ namespace CategoryApi.Controllers
                 {
                     return BadRequest();
                 }
-
-                //if id is not integer, return format not accepted status code
 
                 return Ok(category);
             }
@@ -156,7 +150,6 @@ namespace CategoryApi.Controllers
 
                 var new_category = CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
 
-                //*******needs string uri*********
                 return Created(".../api/categories/", new_category);
             }
             catch

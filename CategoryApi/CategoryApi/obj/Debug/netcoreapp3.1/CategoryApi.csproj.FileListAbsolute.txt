@@ -144,5 +144,8 @@ C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\ru\M
 C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\log4net.config
+C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\Shani\source\repos\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
 C:\Users\Shani\source\repos\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.csproj.CoreCompileInputs.cache
 C:\Users\Shani\source\repos\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.MvcApplicationPartsAssemblyInfo.cache
