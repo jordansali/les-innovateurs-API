@@ -41,7 +41,10 @@ namespace CategoryApi.Controllers
         ///<returns>list of json </returns>
         ///<remarks>could put some sample request here  '\' is a line break to make the sample more readable</remarks>
 
-            [HttpGet]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             var results = await _context.Category.ToListAsync();
@@ -63,6 +66,9 @@ namespace CategoryApi.Controllers
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -71,7 +77,7 @@ namespace CategoryApi.Controllers
             {
                 if (category == null)
                 {
-                    return NotFound("Object not found, please check request");
+                    return NotFound("Custom: Object not found, please check request");
                 }
 
                 if (id != category.CategoryId)
@@ -110,6 +116,9 @@ namespace CategoryApi.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
 
@@ -152,6 +161,9 @@ namespace CategoryApi.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
 
@@ -171,6 +183,9 @@ namespace CategoryApi.Controllers
 
         // DELETE: api/Categories/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<Category>> DeleteCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
