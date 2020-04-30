@@ -607,9 +607,6 @@ C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\runti
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.csprojAssemblyReference.cache
-C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.csproj.CoreCompileInputs.cache
-C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.AssemblyInfoInputs.cache
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.AssemblyInfo.cs
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.RazorTargetAssemblyInfo.cache

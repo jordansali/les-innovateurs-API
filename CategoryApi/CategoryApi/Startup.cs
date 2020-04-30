@@ -33,10 +33,12 @@ namespace CategoryApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<AMCDbContext>(options => options
+            services.AddDbContext<AMCDbContext>(opt =>
+            opt.UseInMemoryDatabase("SampleDB"));
+            /*services.AddDbContext<AMCDbContext>(options => options
                 .UseMySql("Server=localhost; Database=jeopardy;User=root;Password=ssjdnv;",
                     mysqlOptions =>
-                        mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
+                        mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));*/
 
               services.AddSwaggerGen(setupAction =>
               {
