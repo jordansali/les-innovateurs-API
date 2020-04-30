@@ -15,6 +15,7 @@ namespace CategoryApi
     {
         public static void Main(string[] args)
         {
+            //https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/ #serilog setup
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
