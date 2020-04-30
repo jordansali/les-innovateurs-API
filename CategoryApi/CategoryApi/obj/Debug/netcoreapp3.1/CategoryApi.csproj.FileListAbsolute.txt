@@ -616,3 +616,16 @@ C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\stati
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.dll
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.pdb
 C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.genruntimeconfig.cache
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.csproj.CoreCompileInputs.cache
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Dev\les-innovateurs-API\CategoryApi\CategoryApi\obj\Debug\netcoreapp3.1\CategoryApi.MvcApplicationPartsAssemblyInfo.cache

@@ -19,8 +19,8 @@ namespace CategoryApi.Controllers
     [ProducesResponseType(StatusCodes.Status200OK)]
     public class CategoriesController : ControllerBase
     {
-    
 
+        private readonly ILogger<CategoriesController> _logger;
         private readonly AMCDbContext _context;
         
         
@@ -29,8 +29,9 @@ namespace CategoryApi.Controllers
 
 
         //Categories controller constructor with logger and context
-        public CategoriesController(AMCDbContext context)
+        public CategoriesController(AMCDbContext context, ILogger<CategoriesController> logger)
         {
+            _logger = logger;
             _context = context;
         }
 
@@ -48,6 +49,8 @@ namespace CategoryApi.Controllers
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             var results = await _context.Category.ToListAsync();
+
+            _logger.LogInformation("Get Category log test!");
 
             try {
                 if (results == null)
