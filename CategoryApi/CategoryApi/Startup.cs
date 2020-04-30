@@ -22,7 +22,6 @@ namespace CategoryApi
     public class Startup
     {
         //static logger
-        private static readonly log4net.ILog _logger = log4net.LogManager.GetLogger(typeof(Startup)); //Initialize Logger
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -69,9 +68,8 @@ namespace CategoryApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            loggerFactory.AddLog4Net();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

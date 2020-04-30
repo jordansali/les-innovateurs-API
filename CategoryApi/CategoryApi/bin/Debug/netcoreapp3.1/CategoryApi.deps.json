@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Api.Analyzers": "2.2.6",
           "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
+          "Microsoft.EntityFrameworkCore": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.1",

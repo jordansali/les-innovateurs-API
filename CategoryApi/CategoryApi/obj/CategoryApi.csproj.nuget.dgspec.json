@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
+    "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
+    "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "projectUniqueName": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
         "projectName": "CategoryApi",
-        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
-        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
+        "projectPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "packagesPath": "C:\\Users\\a_spagnuolod\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a_spagnuolod\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,6 +50,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
