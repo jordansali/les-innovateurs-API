@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
   },
   "projects": {
-    "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
         "projectName": "CategoryApi",
-        "projectPath": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
-        "packagesPath": "C:\\Users\\selin\\.nuget\\packages\\",
-        "outputPath": "H:\\Source\\Repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
+        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\selin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
