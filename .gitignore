@@ -1,3 +1,5 @@
-CategoryApi/CategoryApi/obj/*
-CategoryApi/CategoryApi/.vs/*
+CategoryApi/obj/*
+CategoryApi/.vs/*
+CategoryApi/bin/*
 CategoryApi/CategoryApi/bin/*
+
