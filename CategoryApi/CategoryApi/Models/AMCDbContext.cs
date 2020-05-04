@@ -23,7 +23,9 @@ namespace CategoryApi.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=ssjdnv;database=jeopardy", x => x.ServerVersion("10.4.12-mariadb"));
+                //optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=ssjdnv;database=jeopardy", x => x.ServerVersion("10.4.12-mariadb"));
+                optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame", x => x.ServerVersion("10.4.12-mariadb"));
+
             }
         }
 
@@ -31,20 +33,20 @@ namespace CategoryApi.Models
         {
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.ToTable("category");
+                entity.ToTable("categories");
 
                 entity.Property(e => e.CategoryId)
-                    .HasColumnName("category_id")
+                    .HasColumnName("id")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.TitleEn)
-                    .HasColumnName("title_en")
+                    .HasColumnName("categoryName_en")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.TitleFr)
-                    .HasColumnName("title_fr")
+                    .HasColumnName("categoryName_fr")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
@@ -61,7 +63,7 @@ namespace CategoryApi.Models
                     .HasName("category_id");
 
                 entity.Property(e => e.QuestionId)
-                    .HasColumnName("question_id")
+                    .HasColumnName("id")
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.AnswerEn)
@@ -81,19 +83,19 @@ namespace CategoryApi.Models
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.DifficultyVal)
-                    .HasColumnName("difficulty_val")
+                    .HasColumnName("points")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.TextEn)
-                    .HasColumnName("text_en")
+                    .HasColumnName("question_en")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.TextFr)
-                    .HasColumnName("text_fr")
+                    .HasColumnName("question_fr")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
