@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CategoryApi.Models
 {
-    public partial class Category
+    public class Categories
     {
-        public Category()
+        public Categories()
         {
             Questions = new HashSet<Questions>();
         }
 
+        [Key]
         public int CategoryId { get; set; }
-        public string TitleEn { get; set; }
-        public string TitleFr { get; set; }
+        public string CategoryNameEn { get; set; }
+        public string CategoryNameFr { get; set; }
 
         public virtual ICollection<Questions> Questions { get; set; }
     }

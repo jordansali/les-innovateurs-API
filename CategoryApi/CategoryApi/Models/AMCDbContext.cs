@@ -15,7 +15,7 @@ namespace CategoryApi.Models
         {
         }
 
-        public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Categories> Category { get; set; }
         public virtual DbSet<Questions> Questions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -31,7 +31,7 @@ namespace CategoryApi.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>(entity =>
+            modelBuilder.Entity<Categories>(entity =>
             {
                 entity.ToTable("categories");
 
@@ -39,20 +39,20 @@ namespace CategoryApi.Models
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.TitleEn)
+                entity.Property(e => e.CategoryNameEn)
                     .HasColumnName("categoryName_en")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
-                entity.Property(e => e.TitleFr)
+                entity.Property(e => e.CategoryNameFr)
                     .HasColumnName("categoryName_fr")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
             });
 
-            modelBuilder.Entity<Questions>(entity =>
+            modelBuilder.Entity<Questions>((Action<Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Questions>>)(entity =>
             {
                 entity.HasKey(e => e.QuestionId)
                     .HasName("PRIMARY");
@@ -66,15 +66,27 @@ namespace CategoryApi.Models
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
+                entity.Property(e => e.QuestionEn)
+                    .HasColumnName("question_en")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.QuestionFr)
+                    .HasColumnName("question_fr")
+                    .HasColumnType("varchar(250)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
                 entity.Property(e => e.AnswerEn)
                     .HasColumnName("answer_en")
-                    .HasColumnType("varchar(250)")
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
                 entity.Property(e => e.AnswerFr)
                     .HasColumnName("answer_fr")
-                    .HasColumnType("varchar(250)")
+                    .HasColumnType("varchar(100)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
 
@@ -82,20 +94,16 @@ namespace CategoryApi.Models
                     .HasColumnName("category_id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.DifficultyVal)
+                entity.Property(e => e.Points)
                     .HasColumnName("points")
-                    .HasColumnType("varchar(50)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_general_ci");
+                    .HasColumnType("int (11)");
 
-                entity.Property(e => e.TextEn)
-                    .HasColumnName("question_en")
-                    .HasColumnType("varchar(250)")
-                    .HasCharSet("utf8")
-                    .HasCollation("utf8_general_ci");
+                entity.Property(e => e.TimeLimit)
+                    .HasColumnName("timeLimit")
+                    .HasColumnType("int (11)");
 
-                entity.Property(e => e.TextFr)
-                    .HasColumnName("question_fr")
+                entity.Property(e => e.Hint)
+                    .HasColumnName("hint")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
@@ -104,7 +112,7 @@ namespace CategoryApi.Models
                     .WithMany(p => p.Questions)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("questions_ibfk_1");
-            });
+            }));
 
             OnModelCreatingPartial(modelBuilder);
         }

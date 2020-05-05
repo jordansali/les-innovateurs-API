@@ -533,3 +533,409 @@ FROM `categories` AS `c`
 2020-05-04 15:08:51.203 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 1802.5486ms
 2020-05-04 15:08:51.204 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
 2020-05-04 15:08:51.208 -04:00 [INF] Request finished in 1877.3851ms 200 application/json; charset=utf-8
+2020-05-05 10:45:45.001 -04:00 [INF] Starting up
+2020-05-05 10:45:45.306 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 10:45:45.309 -04:00 [INF] Hosting environment: Development
+2020-05-05 10:45:45.310 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 10:45:45.321 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 10:45:45.388 -04:00 [INF] Request finished in 69.6579ms 200 text/html;charset=utf-8
+2020-05-05 10:45:45.559 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 10:45:45.677 -04:00 [INF] Request finished in 118.0456ms 200 application/json;charset=utf-8
+2020-05-05 10:45:52.362 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 10:45:52.397 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 10:45:52.425 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Category]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 10:45:52.978 -04:00 [INF] Entity Framework Core 3.1.3 initialized 'AMCDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: ServerVersion 10.4.6 MariaDb 
+2020-05-05 10:45:54.330 -04:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`categoryName_en`, `c`.`categoryName_fr`
+FROM `categories` AS `c`
+2020-05-05 10:45:54.415 -04:00 [INF] Get Category log test!
+2020-05-05 10:45:54.420 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CategoryApi.Models.Category, CategoryApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-05 10:45:54.429 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 1999.4024ms
+2020-05-05 10:45:54.430 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 10:45:54.437 -04:00 [INF] Request finished in 2074.5498ms 200 application/json; charset=utf-8
+2020-05-05 10:46:31.158 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories/1  
+2020-05-05 10:46:31.161 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 10:46:31.179 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CategoryApi.Models.Category]] GetCategory(Int32) on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 10:46:31.232 -04:00 [INF] Entity Framework Core 3.1.3 initialized 'AMCDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: ServerVersion 10.4.6 MariaDb 
+2020-05-05 10:46:31.637 -04:00 [INF] Executed DbCommand (196ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`categoryName_en`, `c`.`categoryName_fr`
+FROM `categories` AS `c`
+WHERE `c`.`id` = @__p_0
+LIMIT 1
+2020-05-05 10:46:31.640 -04:00 [INF] Executing ObjectResult, writing value of type 'CategoryApi.Models.Category'.
+2020-05-05 10:46:31.641 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 461.4495ms
+2020-05-05 10:46:31.641 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 10:46:31.642 -04:00 [INF] Request finished in 483.2591ms 200 application/json; charset=utf-8
+2020-05-05 11:04:17.290 -04:00 [INF] Starting up
+2020-05-05 11:04:17.794 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 11:04:17.798 -04:00 [INF] Hosting environment: Development
+2020-05-05 11:04:17.800 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 11:04:17.819 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 11:04:17.937 -04:00 [INF] Request finished in 123.2283ms 200 text/html;charset=utf-8
+2020-05-05 11:04:18.358 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 11:04:18.652 -04:00 [INF] Request finished in 294.6283ms 200 application/json;charset=utf-8
+2020-05-05 11:04:22.965 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 11:04:22.999 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:04:23.033 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Categories]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:04:23.801 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 761.4438ms
+2020-05-05 11:04:23.806 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:04:23.810 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Categories' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Pomelo.EntityFrameworkCore.MySql.Internal.MySqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IAsyncEnumerable<TEntity>.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CategoryApi.Controllers.CategoriesController.GetCategory() in C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi\Controllers\CategoriesController.cs:line 51
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-05 11:04:23.904 -04:00 [INF] Request finished in 939.3103ms 500 text/plain
+2020-05-05 11:06:38.489 -04:00 [INF] Starting up
+2020-05-05 11:06:39.070 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 11:06:39.074 -04:00 [INF] Hosting environment: Development
+2020-05-05 11:06:39.077 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 11:06:39.089 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 11:06:39.170 -04:00 [INF] Request finished in 84.4722ms 200 text/html;charset=utf-8
+2020-05-05 11:06:39.402 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 11:06:39.631 -04:00 [INF] Request finished in 229.3599ms 200 application/json;charset=utf-8
+2020-05-05 11:06:44.051 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 11:06:44.081 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:06:44.108 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Categories]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:06:44.823 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 710.3824ms
+2020-05-05 11:06:44.826 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:06:44.829 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Categories' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Pomelo.EntityFrameworkCore.MySql.Internal.MySqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IAsyncEnumerable<TEntity>.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CategoryApi.Controllers.CategoriesController.GetCategory() in C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi\Controllers\CategoriesController.cs:line 51
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-05 11:06:44.868 -04:00 [INF] Request finished in 817.4874ms 500 text/plain
+2020-05-05 11:07:11.252 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories/1  
+2020-05-05 11:07:11.254 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:07:11.276 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[CategoryApi.Models.Categories]] GetCategory(Int32) on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:07:11.298 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 21.1665ms
+2020-05-05 11:07:11.298 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:07:11.299 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Categories' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Pomelo.EntityFrameworkCore.MySql.Internal.MySqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_EntityFinderFactory()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_Finder()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.FindAsync(Object[] keyValues)
+   at CategoryApi.Controllers.CategoriesController.GetCategory(Int32 id) in C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi\Controllers\CategoriesController.cs:line 77
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-05 11:07:11.306 -04:00 [INF] Request finished in 53.6353ms 500 text/plain
+2020-05-05 11:18:37.884 -04:00 [INF] Starting up
+2020-05-05 11:18:38.165 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 11:18:38.167 -04:00 [INF] Hosting environment: Development
+2020-05-05 11:18:38.169 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 11:18:38.179 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 11:18:38.247 -04:00 [INF] Request finished in 70.7758ms 200 text/html;charset=utf-8
+2020-05-05 11:18:38.435 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 11:18:38.542 -04:00 [INF] Request finished in 107.4188ms 200 application/json;charset=utf-8
+2020-05-05 11:18:43.267 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 11:18:43.299 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:18:43.324 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Categories]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:18:43.822 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 493.7852ms
+2020-05-05 11:18:43.825 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:18:43.827 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Categories' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Pomelo.EntityFrameworkCore.MySql.Internal.MySqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IAsyncEnumerable<TEntity>.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CategoryApi.Controllers.CategoriesController.GetCategory() in C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi\Controllers\CategoriesController.cs:line 51
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-05 11:18:43.863 -04:00 [INF] Request finished in 596.5947ms 500 text/plain
+2020-05-05 11:35:50.025 -04:00 [INF] Starting up
+2020-05-05 11:35:50.288 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 11:35:50.290 -04:00 [INF] Hosting environment: Development
+2020-05-05 11:35:50.291 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 11:35:50.301 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 11:35:50.368 -04:00 [INF] Request finished in 68.9702ms 200 text/html;charset=utf-8
+2020-05-05 11:35:50.541 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 11:35:50.671 -04:00 [INF] Request finished in 130.3733ms 200 application/json;charset=utf-8
+2020-05-05 11:35:54.303 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 11:35:54.328 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:35:54.356 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Categories]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:35:54.860 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 499.8927ms
+2020-05-05 11:35:54.863 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:35:54.865 -04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The entity type 'Categories' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.ValidateNonNullPrimaryKeys(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Pomelo.EntityFrameworkCore.MySql.Internal.MySqlModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ValidatingConvention.ProcessModelFinalized(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalized(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.ModelBuilder.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_3(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite singletonCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_Model()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityType()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.CheckState()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.get_EntityQueryable()
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.System.Collections.Generic.IAsyncEnumerable<TEntity>.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CategoryApi.Controllers.CategoriesController.GetCategory() in C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi\Controllers\CategoriesController.cs:line 51
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-05 11:35:54.909 -04:00 [INF] Request finished in 606.1625ms 500 text/plain
+2020-05-05 11:37:12.700 -04:00 [INF] Starting up
+2020-05-05 11:37:12.965 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-05-05 11:37:12.967 -04:00 [INF] Hosting environment: Development
+2020-05-05 11:37:12.968 -04:00 [INF] Content root path: C:\Users\jojos\Development\API\les-innovateurs-API\CategoryApi\CategoryApi
+2020-05-05 11:37:12.979 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/index.html  
+2020-05-05 11:37:13.042 -04:00 [INF] Request finished in 65.956ms 200 text/html;charset=utf-8
+2020-05-05 11:37:13.227 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/swagger/CategorySpec/swagger.json  
+2020-05-05 11:37:13.350 -04:00 [INF] Request finished in 123.4561ms 200 application/json;charset=utf-8
+2020-05-05 11:37:23.690 -04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44324/api/Categories  
+2020-05-05 11:37:23.720 -04:00 [INF] Executing endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:37:23.749 -04:00 [INF] Route matched with {action = "GetCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[CategoryApi.Models.Categories]]] GetCategory() on controller CategoryApi.Controllers.CategoriesController (CategoryApi).
+2020-05-05 11:37:24.340 -04:00 [INF] Entity Framework Core 3.1.3 initialized 'AMCDbContext' using provider 'Pomelo.EntityFrameworkCore.MySql' with options: ServerVersion 10.4.6 MariaDb 
+2020-05-05 11:37:26.379 -04:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `c`.`id`, `c`.`categoryName_en`, `c`.`categoryName_fr`
+FROM `categories` AS `c`
+2020-05-05 11:37:26.463 -04:00 [INF] Get Category log test!
+2020-05-05 11:37:26.469 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[CategoryApi.Models.Categories, CategoryApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-05-05 11:37:26.478 -04:00 [INF] Executed action CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi) in 2724.1421ms
+2020-05-05 11:37:26.479 -04:00 [INF] Executed endpoint 'CategoryApi.Controllers.CategoriesController.GetCategory (CategoryApi)'
+2020-05-05 11:37:26.484 -04:00 [INF] Request finished in 2794.3098ms 200 application/json; charset=utf-8
