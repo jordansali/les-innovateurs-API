@@ -36,7 +36,7 @@ namespace CategoryApi
             /*services.AddDbContext<AMCDbContext>(opt =>
             opt.UseInMemoryDatabase("SampleDB"));*/
             services.AddDbContext<AMCDbContext>(options => options
-                .UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame",
+                .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
                     mysqlOptions =>
                         mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
 
