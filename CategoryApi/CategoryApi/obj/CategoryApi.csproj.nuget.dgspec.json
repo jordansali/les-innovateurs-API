@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
+    "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
+    "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "projectUniqueName": "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
         "projectName": "CategoryApi",
-        "projectPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
-        "packagesPath": "C:\\Users\\a_spagnuolod\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
+        "projectPath": "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "packagesPath": "C:\\Users\\jojos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\a_spagnuolod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jojos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,6 +95,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.3.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [

@@ -46,7 +46,7 @@ namespace CategoryApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
+        public async Task<ActionResult<IEnumerable<Categories>>> GetCategory()
         {
             var results = await _context.Category.ToListAsync();
 
@@ -72,7 +72,7 @@ namespace CategoryApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        public async Task<ActionResult<Categories>> GetCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
 
@@ -122,10 +122,10 @@ namespace CategoryApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> PutCategory(int id, Category category)
+        public async Task<IActionResult> PutCategory(int id, Categories category)
         {
 
-            if (id == null)
+            if (id <= 0)
             {
                 return NotFound("Item not found, please check request");
             }
@@ -167,7 +167,7 @@ namespace CategoryApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<ActionResult<Categories>> PostCategory(Categories category)
         {
 
             try {
@@ -189,7 +189,7 @@ namespace CategoryApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Category>> DeleteCategory(int id)
+        public async Task<ActionResult<Categories>> DeleteCategory(int id)
         {
             var category = await _context.Category.FindAsync(id);
 
