@@ -10243,23 +10243,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a_spagnuolod\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Shani\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+      "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
       "projectName": "CategoryApi",
-      "projectPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
-      "packagesPath": "C:\\Users\\a_spagnuolod\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
+      "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+      "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\a_spagnuolod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
