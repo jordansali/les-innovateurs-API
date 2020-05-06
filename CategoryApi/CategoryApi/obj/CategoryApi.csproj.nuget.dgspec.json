@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\jojos\\Development\\API\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jojos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "projectName": "CategoryApi",
+        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\CategoryApi.csproj",
+        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoryApi\\CategoryApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/newapi
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
