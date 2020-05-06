@@ -37,8 +37,7 @@ namespace CategoriesAPI
             services.AddControllers();
             services.AddScoped<IDataRepository<Categories, CategoryDTO>, CategoryDataManager>();
             services.AddDbContext<AMCDbContext>(options => options
-
-             .UseMySql("Server=feltgame.mariadb.database.azure.com; Database=feltgame;User=mariadbadmin@feltgame;Password=azuremariaDb!2020;",
+             .UseMySql((Configuration.GetConnectionString("FeltGameContext"),
                  mysqlOptions =>
                      mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
 
