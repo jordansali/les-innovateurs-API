@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CategoriesAPI.Models
 {
@@ -10,7 +11,8 @@ namespace CategoriesAPI.Models
             Questions = new HashSet<Questions>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public int CategoryId { get; set; }
         public string CategoryNameEn { get; set; }
         public string CategoryNameFr { get; set; }
 
