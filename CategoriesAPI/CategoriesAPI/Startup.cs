@@ -37,9 +37,9 @@ namespace CategoriesAPI
             services.AddControllers();
             services.AddScoped<IDataRepository<Categories, CategoryDTO>, CategoryDataManager>();
             services.AddDbContext<AMCDbContext>(options => options
-             .UseMySql((Configuration.GetConnectionString("FeltGameContext"),
-                 mysqlOptions =>
-                     mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
+             .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
+                    mysqlOptions =>
+                        mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
 
             services.AddSwaggerGen(setupAction =>
             {
