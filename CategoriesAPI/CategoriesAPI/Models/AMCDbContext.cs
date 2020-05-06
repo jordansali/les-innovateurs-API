@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -33,13 +33,16 @@ namespace CategoriesAPI.Models
         {
             modelBuilder.Entity<Categories>(entity =>
             {
+                entity.HasKey(e => e.CategoryId)
+                    .HasName("PRIMARY");
+                
                 entity.ToTable("categories");
 
                 entity.HasIndex(e => e.CategoryNameEn)
                     .HasName("FJ_UniqueCategory")
                     .IsUnique();
 
-                entity.Property(e => e.Id)
+                entity.Property(e => e.CategoryId)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
@@ -58,13 +61,16 @@ namespace CategoriesAPI.Models
 
             modelBuilder.Entity<Players>(entity =>
             {
+                entity.HasKey(e => e.PlayerId)
+                    .HasName("PRIMARY");
+                
                 entity.ToTable("players");
 
                 entity.HasIndex(e => e.EmailAddress)
                     .HasName("FJ_UniqueEmail")
                     .IsUnique();
 
-                entity.Property(e => e.Id)
+                entity.Property(e => e.PlayerId)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
@@ -91,12 +97,15 @@ namespace CategoriesAPI.Models
 
             modelBuilder.Entity<Questions>(entity =>
             {
+                entity.HasKey(e => e.QuestionId)
+                    .HasName("PRIMARY");
+                
                 entity.ToTable("questions");
 
                 entity.HasIndex(e => e.CategoryId)
                     .HasName("category_id");
 
-                entity.Property(e => e.Id)
+                entity.Property(e => e.QuestionId)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
