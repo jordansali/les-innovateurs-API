@@ -1,11 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CategoriesAPI.Models
 {
     public partial class Questions
     {
-        public int Id { get; set; }
+        [Key]
+        public int QuestionId { get; set; }
         public string QuestionEn { get; set; }
         public string QuestionFr { get; set; }
         public string AnswerEn { get; set; }
