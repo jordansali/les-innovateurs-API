@@ -1,0 +1,10 @@
+CategoriesAPI/obj/*
+CategoriesAPI/bin/
+CategoriesAPI/CategoriesAPI/bin/
+CategoriesAPI/CategoriesAPI/logs/
+CategoriesAPI/.vs/
+CategoriesAPI/CategoriesAPI/obj/
+CategoriesAPI/CategoriesAPI/obj/Debug/netcoreapp3.1/CategoriesAPI.assets.cache
+CategoriesAPI/CategoriesAPI/obj/Debug/netcoreapp3.1/CategoriesAPI.csprojAssemblyReference.cache
+CategoriesAPI/.vs/CategoriesAPI/v16/.suo
+CategoriesAPI\.vs\
