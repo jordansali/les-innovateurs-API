@@ -12,7 +12,7 @@ namespace CategoriesAPI.Models.DTO
         {
             return new CategoryDTO()
             {
-                Id = categories.Id,
+                Id = categories.CategoryId,
                 CategoryNameEn = categories.CategoryNameEn,
                 CategoryNameFr = categories.CategoryNameFr,
             };

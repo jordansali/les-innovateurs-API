@@ -5,7 +5,7 @@ namespace CategoriesAPI.Models
 {
     public partial class Players
     {
-        public int Id { get; set; }
+        public int PlayerId { get; set; }
         public string EmailAddress { get; set; }
         public string Name { get; set; }
         public int? Score { get; set; }

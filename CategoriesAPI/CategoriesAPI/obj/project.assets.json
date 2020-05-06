@@ -8127,19 +8127,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Shani\\.nuget\\packages\\": {}
+    "C:\\Users\\jojos\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
+      "projectUniqueName": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
       "projectName": "CategoriesAPI",
-      "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
-      "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\obj\\",
+      "projectPath": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
+      "packagesPath": "C:\\Users\\jojos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jojos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

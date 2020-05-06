@@ -29,7 +29,7 @@ namespace CategoriesAPI.Models.DataManager
         public Categories Get(long id)
         {
             var author = _catContext.Categories
-                .SingleOrDefault(b => b.Id == id);
+                .SingleOrDefault(b => b.CategoryId == id);
 
             return author;
         }
@@ -41,7 +41,7 @@ namespace CategoriesAPI.Models.DataManager
             using (var context = new AMCDbContext())
             {
                 var author = context.Categories
-                    .SingleOrDefault(b => b.Id == id);
+                    .SingleOrDefault(b => b.CategoryId == id);
 
                 return CategoriesDTOMapper.MapToDto(author);
             }
@@ -59,7 +59,7 @@ namespace CategoriesAPI.Models.DataManager
             entityToUpdate = _catContext.Categories
             //    .Include(a => a.CategoryNameEn)
             //    .Include(a => a.CategoryNameFr)
-                .Single(b => b.Id == entityToUpdate.Id);
+                .Single(b => b.CategoryId == entityToUpdate.CategoryId);
 
             entityToUpdate.CategoryNameEn = entity.CategoryNameEn;
             entityToUpdate.CategoryNameFr = entity.CategoryNameFr;
@@ -86,7 +86,7 @@ namespace CategoriesAPI.Models.DataManager
         public void Delete(Categories entity)
         {
             entity = _catContext.Categories
-                .SingleOrDefault(b => b.Id == entity.Id);
+                .SingleOrDefault(b => b.CategoryId == entity.CategoryId);
 
             _catContext.Categories.Remove(entity);
            // throw new System.NotImplementedException();
