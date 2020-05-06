@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,10 +19,13 @@ namespace CategoriesAPI.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly IDataRepository<Categories, CategoryDTO> _dataRepository;
+        private readonly ILogger<CategoriesController> _logger;
 
-        public CategoriesController(IDataRepository<Categories, CategoryDTO> dataRepository)
+        //Categories controller constructor with logger and data repo
+        public CategoriesController(IDataRepository<Categories, CategoryDTO> dataRepository, ILogger<CategoriesController> logger)
         {
             _dataRepository = dataRepository;
+            _logger = logger;
         }
 
         // GET: api/Categories
@@ -70,7 +73,7 @@ namespace CategoriesAPI.Controllers
             }
 
             _dataRepository.Add(categories);
-            return CreatedAtRoute(".../api/Categories", new { Id = categories.Id }, null);
+            return CreatedAtRoute(".../api/Categories", new { Id = categories.CategoryId }, null);
 
         }
 
