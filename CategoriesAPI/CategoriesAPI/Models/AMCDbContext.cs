@@ -19,14 +19,15 @@ namespace CategoriesAPI.Models
         public virtual DbSet<Players> Players { get; set; }
         public virtual DbSet<Questions> Questions { get; set; }
 
+/* commenting out for now - using Connection String in appsettings.json to connect to db in Startup.cs
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame", x => x.ServerVersion("10.2.29-mariadb"));
+                optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=;database=feltgame", x => x.ServerVersion("10.2.29-mariadb"));
             }
-        }
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
