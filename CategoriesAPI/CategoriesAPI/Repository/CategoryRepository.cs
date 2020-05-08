@@ -40,18 +40,19 @@ namespace CategoriesAPI.Repository
         /// 
         /// </summary>
         /// <param name="entity"></param>
-        public void AddCategory(Categories entity)
+        public void AddCategory(CategoryDTO entity)
         {
-            _dbContext.Set<Categories>().Add(entity);            
+            
+            _dbContext.Set<CategoryDTO>().Add(entity);            
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entity"></param>
-        public void DeleteCategory(Categories entity)
+        public void DeleteCategory(CategoryDTO entity)
         {
-            _dbContext.Set<Categories>().Remove(entity);
+            _dbContext.Set<CategoryDTO>().Remove(entity);
         }
 
         /// <summary>

@@ -81,14 +81,21 @@ namespace CategoriesAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<CategoryDTO>> Post(CategoryDTO categoryDto)
         {
+            /*
             var cat = new Categories
             {
                 CategoryNameEn = categoryDto.CategoryNameEn,
                 CategoryNameFr = categoryDto.CategoryNameFr
             };
 
-            return Ok(cat);
-                     
+            return CreatedAtRoute(".../api/Categories", new { Id = cat.CategoryId }, null);
+            */
+            if (categoryDto is null)
+            {
+                return NotFound("No Categories found");
+            }
+            _categoryRepository.AddCategory(categoryDto);
+            return CreatedAtRoute(".../api/Categories", new { Id = categoryDto.CategoryId }, null);
         }
 
         // PUT

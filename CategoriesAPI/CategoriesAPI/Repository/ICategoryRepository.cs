@@ -29,7 +29,7 @@ namespace CategoriesAPI.Repository
         /// 
         /// </summary>
         /// <param name="entity"></param>
-        void AddCategory(Categories entity);
+        void AddCategory(CategoryDTO entity);
 
         /// <summary>
         /// 
