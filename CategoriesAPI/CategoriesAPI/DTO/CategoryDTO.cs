@@ -1,9 +1,5 @@
-﻿using CategoriesAPI.Models;
-using System;
-using System.Collections.Generic;
+﻿using CategoriesAPI.Data.EFCore;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CategoriesAPI.DTO
 {
@@ -16,10 +12,10 @@ namespace CategoriesAPI.DTO
             this.dbContext = databaseContext;
         }
 
-        public int CategoryId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string CategoryNameEn { get; set; }
-        public string CategoryNameFr { get; set; }
+        public string CategoryName_En { get; set; }
+        public string CategoryName_Fr { get; set; }
     }
 }

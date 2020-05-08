@@ -1,8 +1,8 @@
 using System;
+using CategoriesAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace CategoriesAPI.Models
+namespace CategoriesAPI.Data.EFCore
 {
     public partial class AMCDbContext : DbContext
     {
@@ -15,10 +15,11 @@ namespace CategoriesAPI.Models
         {
         }
 
+        /*
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<Players> Players { get; set; }
         public virtual DbSet<Questions> Questions { get; set; }
-
+        */
 /* commenting out for now - using Connection String in appsettings.json to connect to db in Startup.cs
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -33,26 +34,26 @@ namespace CategoriesAPI.Models
         {
             modelBuilder.Entity<Categories>(entity =>
             {
-                entity.HasKey(e => e.CategoryId)
+                entity.HasKey(e => e.Id)
                     .HasName("PRIMARY");
                 
                 entity.ToTable("categories");
 
-                entity.HasIndex(e => e.CategoryNameEn)
+                entity.HasIndex(e => e.CategoryName_En)
                     .HasName("FJ_UniqueCategory")
                     .IsUnique();
 
-                entity.Property(e => e.CategoryId)
+                entity.Property(e => e.Id)
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.CategoryNameEn)
+                entity.Property(e => e.CategoryName_En)
                     .HasColumnName("categoryName_en")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.CategoryNameFr)
+                entity.Property(e => e.CategoryName_Fr)
                     .HasColumnName("categoryName_fr")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")

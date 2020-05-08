@@ -1,24 +1,15 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using CategoriesAPI.Models;
-using CategoriesAPI.Models.DataManager;
-using CategoriesAPI.DTO;
-using CategoriesAPI.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Pomelo.EntityFrameworkCore.MySql.Storage;
+using CategoriesAPI.Data.EFCore;
 
 namespace CategoriesAPI
 {
@@ -69,6 +60,7 @@ namespace CategoriesAPI
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
 
             });
+            services.AddScoped<EfCoreCategoryRepository>();
             
         }
 

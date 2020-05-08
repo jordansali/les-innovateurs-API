@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
-using System.Threading.Tasks;
 using AutoMapper;
 using CategoriesAPI.DTO;
 using CategoriesAPI.Models;
 using CategoriesAPI.ResultSet;
+using CategoriesAPI.Data.EFCore;
 
 namespace CategoriesAPI.Mapping
 {
@@ -26,9 +26,9 @@ namespace CategoriesAPI.Mapping
 
             return new CategoryDTO(_dbContext)
             {
-                CategoryId = categories.CategoryId,
-                CategoryNameEn = categories.CategoryNameEn,
-                CategoryNameFr = categories.CategoryNameFr,
+                Id = categories.Id,
+                CategoryName_En = categories.CategoryName_En,
+                CategoryName_Fr = categories.CategoryName_Fr,
             };
         }
        
