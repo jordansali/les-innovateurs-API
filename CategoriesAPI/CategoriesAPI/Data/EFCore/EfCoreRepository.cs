@@ -1,5 +1,4 @@
-﻿using CategoriesAPI.Repository;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -42,6 +41,7 @@ namespace CategoriesAPI.Data.EFCore
         {
             throw new NotImplementedException();
             //TODO
+            // DONT FORGET TODO!!!!
         }
 
         public async Task<TEntity> GetCategoryById(int id)

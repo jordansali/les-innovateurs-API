@@ -1,11 +1,6 @@
 ﻿using CategoriesAPI.Data;
-using CategoriesAPI.DTO;
-using CategoriesAPI.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CategoriesAPI.Controllers

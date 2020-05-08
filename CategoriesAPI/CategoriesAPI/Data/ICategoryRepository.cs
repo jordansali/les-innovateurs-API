@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using CategoriesAPI.Data;
 
-namespace CategoriesAPI.Repository
+namespace CategoriesAPI.Data
 {
     /// <summary>
     /// Interface for Category Repository
