@@ -86,6 +86,8 @@ namespace CategoriesAPI.Controllers
                 CategoryNameEn = categoryDto.CategoryNameEn,
                 CategoryNameFr = categoryDto.CategoryNameFr
             };
+
+            return Ok(cat);
                      
         }
 

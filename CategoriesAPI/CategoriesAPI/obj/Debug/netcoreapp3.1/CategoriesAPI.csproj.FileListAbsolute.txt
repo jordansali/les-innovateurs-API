@@ -272,3 +272,4 @@ C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csproj.CoreCompileInputs.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll

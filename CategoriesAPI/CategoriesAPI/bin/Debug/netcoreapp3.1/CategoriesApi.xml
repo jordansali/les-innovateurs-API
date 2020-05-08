@@ -4,12 +4,173 @@
         <name>CategoriesAPI</name>
     </assembly>
     <members>
+        <member name="T:CategoriesAPI.Controllers.CategoriesController">
+            <summary>
+            Categories Controller class
+            </summary>
+        </member>
         <member name="M:CategoriesAPI.Controllers.CategoriesController.Get">
             <summary>
-            Get list of all Category
+            Get list of all Categories
             </summary>
             <returns>list of json </returns>
             <remarks>could put some sample request here  '\' is a line break to make the sample more readable</remarks>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoriesController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoriesController.Post(CategoriesAPI.DTO.CategoryDTO)">
+            <summary>
+            
+            </summary>
+            <param name="categories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoriesController.Put(System.Int32,CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="categories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoriesController.Delete(System.Int32,CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="categories"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CategoriesAPI.Models.DataManager.CategoryDataManager">
+            <summary>
+            CategoryDataManager class
+            </summary>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.#ctor(CategoriesAPI.Models.AMCDbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="categoryContext"></param>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.GetAllCategories">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.GetCategoryById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.AddCategory(CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.UpdateCategory(CategoriesAPI.Models.Categories,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:CategoriesAPI.Models.DataManager.CategoryDataManager.DeleteCategory(CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="T:CategoriesAPI.Repository.CategoryRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions,CategoriesAPI.Models.AMCDbContext,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="databaseContext"></param>
+            <param name="dbcontext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.AddCategory(CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.DeleteCategory(CategoriesAPI.Models.Categories)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.GetAllCategories">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.UpdateCategory(CategoriesAPI.Models.Categories,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.CategoryRepository.CategoriesAPI#Repository#ICategoryRepository{CategoriesAPI#Models#Categories,System#Int32}#GetCategoryById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CategoriesAPI.Repository.ICategoryRepository`2">
+            <summary>
+            Interface for Category Repository
+            </summary>
+        </member>
+        <member name="M:CategoriesAPI.Repository.ICategoryRepository`2.GetAllCategories">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Repository.ICategoryRepository`2.GetCategoryById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Repository.ICategoryRepository`2.AddCategory(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.ICategoryRepository`2.UpdateCategory(`0,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="entityToUpdate"></param>
+            <param name="entity"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:CategoriesAPI.Repository.ICategoryRepository`2.DeleteCategory(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
         </member>
     </members>
 </doc>
