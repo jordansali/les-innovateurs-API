@@ -3,55 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CategoriesAPI.Models;
-using CategoriesAPI.Models.DTO;
-using CategoriesAPI.Models.Repository;
+using CategoriesAPI.DTO;
+using CategoriesAPI.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+
 namespace CategoriesAPI.Controllers
 {
+    /// <summary>
+    /// Categories Controller class
+    /// </summary>
     [Route("api/[controller]")]
-    [ApiController]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ApiController]    
     public class CategoriesController : ControllerBase
-    {
-        private readonly IDataRepository<Categories, CategoryDTO> _dataRepository;
+    {        
+        #region Private Member Variables
+        private ICategoryRepository<Categories,int> _categoryRepository;     
         private readonly ILogger<CategoriesController> _logger;
+        #endregion
 
-        //Categories controller constructor with logger and data repo
-        public CategoriesController(IDataRepository<Categories, CategoryDTO> dataRepository, ILogger<CategoriesController> logger)
-        {
-            _dataRepository = dataRepository;
+        // CONSTRUCTOR
+        public CategoriesController(ICategoryRepository<Categories,int> categoryRepository,  ILogger<CategoriesController> logger)
+        {            
+            _categoryRepository = categoryRepository;           
             _logger = logger;
         }
 
         // GET: api/Categories
         ///<summary>
-        ///Get list of all Category
+        ///Get list of all Categories
         ///</summary>
         ///<returns>list of json </returns>
         ///<remarks>could put some sample request here  '\' is a line break to make the sample more readable</remarks>
-
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get()
         {
-            var categories = _dataRepository.GetAll();
+            var categories = _categoryRepository.GetAllCategories();
             return Ok(categories);
         }
 
+        // GET BY ID: api/Categories/{id}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult Get(int id)
         {
-            var categories = _dataRepository.GetDto(id);
+            var categories = _categoryRepository.GetCategoryById(id);
 
             if (categories == null)
             {
@@ -60,23 +68,34 @@ namespace CategoriesAPI.Controllers
 
             return Ok(categories);
         }
-
+        
+        // POST
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categories"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult Post(Categories categories)
+        public async Task<ActionResult<CategoryDTO>> Post(CategoryDTO categoryDto)
         {
-            if (categories is null)
+            var cat = new Categories
             {
-                return NotFound("No Categories found");
-            }
-
-            _dataRepository.Add(categories);
-            return CreatedAtRoute(".../api/Categories", new { Id = categories.CategoryId }, null);
-
+                CategoryNameEn = categoryDto.CategoryNameEn,
+                CategoryNameFr = categoryDto.CategoryNameFr
+            };
+                     
         }
 
+        // PUT
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -88,7 +107,7 @@ namespace CategoriesAPI.Controllers
                 return BadRequest("Author is null.");
             }
 
-            var categoryToUpdate = _dataRepository.Get(id);
+            var categoryToUpdate = _categoryRepository.GetCategoryById(id);
             if (categoryToUpdate == null)
             {
                 return NotFound("The Employee record couldn't be found.");
@@ -99,17 +118,25 @@ namespace CategoriesAPI.Controllers
                 return BadRequest();
             }
 
-            _dataRepository.Update(categoryToUpdate, categories);
+            _categoryRepository.UpdateCategory(categoryToUpdate,id);
             return Ok();
         }
+
+
         //DELETE: api/Categories/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Delete(int id, Categories categories)
         {
-            var category =  _dataRepository.Get(id);
+            var category =  _categoryRepository.GetCategoryById(id);
 
     
                 if (category == null)

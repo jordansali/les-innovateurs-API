@@ -136,9 +136,6 @@ C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\
 C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csprojAssemblyReference.cache
-C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csproj.CoreCompileInputs.cache
-C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.AssemblyInfoInputs.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.AssemblyInfo.cs
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.dll
@@ -272,3 +269,6 @@ C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\staticwebassets\CategoriesAPI.StaticWebAssets.Manifest.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\staticwebassets\CategoriesAPI.StaticWebAssets.xml
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.genruntimeconfig.cache
+C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csproj.CoreCompileInputs.cache
+C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache

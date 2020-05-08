@@ -6,8 +6,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using CategoriesAPI.Models;
 using CategoriesAPI.Models.DataManager;
-using CategoriesAPI.Models.DTO;
-using CategoriesAPI.Models.Repository;
+using CategoriesAPI.DTO;
+using CategoriesAPI.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,8 +34,11 @@ namespace CategoriesAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddScoped<IDataRepository<Categories, CategoryDTO>, CategoryDataManager>();
+            //
+            //TODO: Mapping
+            //
+
+            services.AddControllers();                       
             services.AddDbContext<AMCDbContext>(options => options
              .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
                     mysqlOptions =>

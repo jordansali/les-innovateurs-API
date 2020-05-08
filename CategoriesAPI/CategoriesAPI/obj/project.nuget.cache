@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xlEcaDdsRWz+g4ZZUTQ2zFb3vOu2ws2+cwgcX9ZZMCTXa6MCoYV8CXInZwciB2+MbhAy+PzHbNCyAf8NZZZmkA==",
+  "dgSpecHash": "NJY3bc9PpLdD0Fut7rKBdr4dS15Oq5g5k7oZp719eZYDhcP91oKogVER42XcZZ42LWeYtiHCXMgMEzOyrXO11w==",
   "success": true,
   "projectFilePath": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jojos\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\jojos\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.0.0\\microsoft.aspnetcore.hosting.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\jojos\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.0.0\\microsoft.aspnetcore.hosting.server.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\jojos\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -2,60 +2,72 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CategoriesAPI.Models.DataManager;
-using CategoriesAPI.Models.Repository;
-using CategoriesAPI.Models.DTO;
+using CategoriesAPI.Repository;
+using CategoriesAPI.DTO;
 using Microsoft.EntityFrameworkCore;
-
+using CategoriesAPI.Mapping;
 
 namespace CategoriesAPI.Models.DataManager
 {
-    public class CategoryDataManager : IDataRepository<Categories, CategoryDTO>
+    /// <summary>
+    /// CategoryDataManager class
+    /// </summary>
+    public class CategoryDataManager : ICategoryRepository<Categories,int>
     {
         readonly AMCDbContext _catContext;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="categoryContext"></param>
         public CategoryDataManager(AMCDbContext categoryContext)
         {
             _catContext = categoryContext;
-        }
+        }        
 
-        public IEnumerable<Categories> GetAll()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Categories> GetAllCategories()
         {
+
             return _catContext.Categories
             //    .Include(categories => categories.)
                 .ToList();
         }
 
-        public Categories Get(long id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Categories GetCategoryById(int id)
         {
-            var author = _catContext.Categories
+            var cat = _catContext.Categories
                 .SingleOrDefault(b => b.CategoryId == id);
 
-            return author;
+            return cat;
         }
 
-        public CategoryDTO GetDto(long id)
-        {
-            _catContext.ChangeTracker.LazyLoadingEnabled = true;
-
-            using (var context = new AMCDbContext())
-            {
-                var author = context.Categories
-                    .SingleOrDefault(b => b.CategoryId == id);
-
-                return CategoriesDTOMapper.MapToDto(author);
-            }
-        }
-
-
-        public void Add(Categories entity)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        public void AddCategory(Categories entity)
         {
             _catContext.Categories.Add(entity);
             _catContext.SaveChanges();
         }
 
-        public void Update(Categories entityToUpdate, Categories entity)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="id"></param>
+        public void UpdateCategory(Categories entity, int id)
         {
+            /*
             entityToUpdate = _catContext.Categories
             //    .Include(a => a.CategoryNameEn)
             //    .Include(a => a.CategoryNameFr)
@@ -83,13 +95,16 @@ namespace CategoriesAPI.Models.DataManager
             _catContext.SaveChanges();
         }
 
-        public void Delete(Categories entity)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        public void DeleteCategory(Categories entity)
         {
             entity = _catContext.Categories
                 .SingleOrDefault(b => b.CategoryId == entity.CategoryId);
 
             _catContext.Categories.Remove(entity);
-           // throw new System.NotImplementedException();
         }
     }
 }

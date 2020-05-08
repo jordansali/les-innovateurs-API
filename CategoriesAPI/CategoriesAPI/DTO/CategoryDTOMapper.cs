@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using CategoriesAPI.Models;
 
-namespace CategoriesAPI.Models.DTO
+namespace CategoriesAPI.DTO
 {
-    public static class CategoriesDTOMapper
+    public static class CategoryDTOMapper
     {
         public static CategoryDTO MapToDto(Categories categories)
         {
             return new CategoryDTO()
             {
-                Id = categories.CategoryId,
+                CategoryId = categories.CategoryId,
                 CategoryNameEn = categories.CategoryNameEn,
                 CategoryNameFr = categories.CategoryNameFr,
             };
