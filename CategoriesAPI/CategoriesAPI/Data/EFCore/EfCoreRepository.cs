@@ -39,7 +39,10 @@ namespace CategoriesAPI.Data.EFCore
 
         public async Task<List<TEntity>> GetAllCategories()
         {
-            throw new NotImplementedException();
+            var entity = await context.Set<TEntity>().ToListAsync();
+
+            return entity;
+            //throw new NotImplementedException();
             //TODO
             // DONT FORGET TODO!!!!
         }

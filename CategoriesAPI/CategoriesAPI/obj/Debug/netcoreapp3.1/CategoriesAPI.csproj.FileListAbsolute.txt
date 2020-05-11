@@ -132,9 +132,6 @@ C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\
 C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csproj.CoreCompileInputs.cache
-C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csprojAssemblyReference.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.AssemblyInfoInputs.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.AssemblyInfo.cs
@@ -273,3 +270,10 @@ C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jojos\Source\Repos\les-innovateurs-API2\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.csproj.CoreCompileInputs.cache
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\obj\Debug\netcoreapp3.1\CategoriesAPI.MvcApplicationPartsAssemblyInfo.cache

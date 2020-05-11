@@ -20,7 +20,9 @@ namespace CategoriesAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TEntity>>> Get()
         {
-            return await repository.GetAllCategories();
+           var categories = await repository.GetAllCategories();
+
+            return Ok(categories);
         }
 
         // GET: api/[controller]/5

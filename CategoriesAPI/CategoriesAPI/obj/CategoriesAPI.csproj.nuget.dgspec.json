@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj": {}
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj": {
+    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
         "projectName": "CategoriesAPI",
-        "projectPath": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
-        "packagesPath": "C:\\Users\\jojos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jojos\\Source\\Repos\\les-innovateurs-API2\\CategoriesAPI\\CategoriesAPI\\obj\\",
+        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\CategoriesAPI.csproj",
+        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\CategoriesAPI\\CategoriesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jojos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,10 @@
             "Microsoft.AspNetCore.Mvc.Api.Analyzers": {
               "target": "Package",
               "version": "[2.2.6, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.3, )"
             },
             "Microsoft.CodeAnalysis.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
