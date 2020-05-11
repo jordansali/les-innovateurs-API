@@ -25,12 +25,9 @@ namespace CategoriesAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //
-            //TODO: Mapping
-            //
-
+         
             services.AddControllers();                       
-            services.AddDbContext<AMCDbContext>(options => options
+            services.AddDbContext<JeopardyDbContext>(options => options
              .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
                     mysqlOptions =>
                         mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
@@ -60,7 +57,7 @@ namespace CategoriesAPI
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
 
             });
-            services.AddScoped<EfCoreCategoryRepository>();
+            services.AddScoped<CategoryRepository>();
 
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

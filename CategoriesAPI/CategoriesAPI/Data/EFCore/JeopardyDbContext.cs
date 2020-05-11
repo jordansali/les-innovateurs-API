@@ -1,34 +1,18 @@
-using System;
 using CategoriesAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CategoriesAPI.Data.EFCore
 {
-    public partial class AMCDbContext : DbContext
+    public partial class JeopardyDbContext : DbContext
     {
-        public AMCDbContext()
+        public JeopardyDbContext()
         {
         }
 
-        public AMCDbContext(DbContextOptions<AMCDbContext> options)
+        public JeopardyDbContext(DbContextOptions<JeopardyDbContext> options)
             : base(options)
         {
         }
-
-        /*
-        public virtual DbSet<Categories> Categories { get; set; }
-        public virtual DbSet<Players> Players { get; set; }
-        public virtual DbSet<Questions> Questions { get; set; }
-        */
-/* commenting out for now - using Connection String in appsettings.json to connect to db in Startup.cs
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=;database=feltgame", x => x.ServerVersion("10.2.29-mariadb"));
-            }
-        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

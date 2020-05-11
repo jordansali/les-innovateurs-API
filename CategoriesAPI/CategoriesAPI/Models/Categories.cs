@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CategoriesAPI.Models
 {
-    public partial class Categories : IEntity
+    public partial class Categories : ICategoryEntity
     {
         /// <summary>
         /// 

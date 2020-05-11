@@ -1,1 +1,43 @@
 
+2020-05-11 14:03:59.234 -04:00 [INF] Starting up
+2020-05-11 14:03:59.428 -04:00 [FTL] Application start-up failed
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: CategoriesAPI.Data.EFCore.CategoryRepository Lifetime: Scoped ImplementationType: CategoriesAPI.Data.EFCore.CategoryRepository': Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: CategoriesAPI.Data.EFCore.CategoryRepository Lifetime: Scoped ImplementationType: CategoriesAPI.Data.EFCore.CategoryRepository': Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at CategoriesAPI.Program.Main(String[] args) in C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\Program.cs:line 34
+2020-05-11 14:15:51.274 -04:00 [INF] Starting up
+2020-05-11 14:15:52.584 -04:00 [FTL] Application start-up failed
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: CategoriesAPI.Data.EFCore.CategoryRepository Lifetime: Scoped ImplementationType: CategoriesAPI.Data.EFCore.CategoryRepository': Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: CategoriesAPI.Data.EFCore.CategoryRepository Lifetime: Scoped ImplementationType: CategoriesAPI.Data.EFCore.CategoryRepository': Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'CategoriesAPI.Data.EFCore.JeopardyDbContext' while attempting to activate 'CategoriesAPI.Data.EFCore.CategoryRepository'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type serviceType, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(IEnumerable`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.DefaultServiceProviderFactory.CreateServiceProvider(IServiceCollection containerBuilder)
+   at Microsoft.Extensions.Hosting.Internal.ServiceFactoryAdapter`1.CreateServiceProvider(Object containerBuilder)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at CategoriesAPI.Program.Main(String[] args) in C:\Users\Shani\source\repos\les-innovateurs-API\CategoriesAPI\CategoriesAPI\Program.cs:line 34
