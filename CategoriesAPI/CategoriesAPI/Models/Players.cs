@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace CategoriesAPI.Models
+﻿namespace CategoriesAPI.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Players
     {
         public int PlayerId { get; set; }

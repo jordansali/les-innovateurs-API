@@ -1,9 +1,10 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CategoriesAPI.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Questions
     {
         [Key]

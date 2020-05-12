@@ -5,13 +5,12 @@ using System;
 
 namespace CategoriesAPI
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-
-            //https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/ #serilog setup
+            
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
