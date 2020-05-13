@@ -53,7 +53,7 @@ namespace CategoriesAPI.Controllers
             {
                 return NotFound();
             }
-            return category;
+            return Ok(category);
         }
         /// <summary>
         /// Update a category
@@ -108,7 +108,7 @@ namespace CategoriesAPI.Controllers
             {
                 return NotFound();
             }
-            return category;
+            return Ok(category);
         }
     }
 }
