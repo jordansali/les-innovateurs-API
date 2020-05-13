@@ -31,7 +31,10 @@ namespace CategoriesAPI
              .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
                     mysqlOptions =>
                         mysqlOptions.ServerVersion(new ServerVersion(new Version(10, 4, 6), ServerType.MariaDb))));
-
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             services.AddSwaggerGen(setupAction =>
             {
                 setupAction.SwaggerDoc("CategorySpec",
@@ -87,6 +90,8 @@ namespace CategoriesAPI
 
 
             app.UseRouting();
+
+            app.UseCors("AllowOrigin");
 
             app.UseAuthorization();
 
