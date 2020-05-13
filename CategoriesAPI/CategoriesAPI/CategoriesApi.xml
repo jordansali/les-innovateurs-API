@@ -81,26 +81,26 @@
         </member>
         <member name="M:CategoriesAPI.Data.ICategoryRepository`1.GetAllCategories">
             <summary>
-            
+            Get a list of all categories
             </summary>
             <returns></returns>
         </member>
         <member name="M:CategoriesAPI.Data.ICategoryRepository`1.GetCategoryById(System.Int32)">
             <summary>
-            
+            Get category by id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:CategoriesAPI.Data.ICategoryRepository`1.AddCategory(`0)">
             <summary>
-            
+            Add a category
             </summary>
             <param name="entity"></param>
         </member>
         <member name="M:CategoriesAPI.Data.ICategoryRepository`1.UpdateCategory(`0)">
             <summary>
-            
+            Update a category
             </summary>
             <param name="entityToUpdate"></param>
             <param name="entity"></param>
@@ -108,7 +108,7 @@
         </member>
         <member name="M:CategoriesAPI.Data.ICategoryRepository`1.DeleteCategory(System.Int32)">
             <summary>
-            
+            Delete a category
             </summary>
             <param name="entity"></param>
         </member>
