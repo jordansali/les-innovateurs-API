@@ -13,7 +13,7 @@
         </member>
         <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Get(System.Int32)">
             <summary>
-            Hey it's Shanique! Getting a category by id
+            Get category by id
             </summary>
             <param name="entity"></param>
             <returns></returns>
