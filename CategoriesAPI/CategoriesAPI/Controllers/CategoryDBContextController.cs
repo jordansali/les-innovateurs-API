@@ -36,7 +36,7 @@ namespace CategoriesAPI.Controllers
             return Ok(categories);
         }
         /// <summary>
-        /// Get category by id
+        /// Hey it's Shanique! Getting a category by id
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
