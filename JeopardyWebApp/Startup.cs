@@ -67,6 +67,7 @@ namespace JeopardyWebApp
 
             });
             services.AddScoped<CategoryRepository>();
+            services.AddScoped<QuestionRepository>();
 
             services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

@@ -39,6 +39,41 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get">
+            <summary>
+            Get a list of all questions
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get(System.Int32)">
+            <summary>
+            Get question by id
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Put(System.Int32,`0)">
+            <summary>
+            Update a question
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Post(`0)">
+            <summary>
+            Create a question
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Delete(System.Int32)">
+            <summary>
+            Delete a question
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.AddCategory(`0)">
             <summary>
             Add a category

@@ -10,7 +10,7 @@ namespace JeopardyWebApp.Controllers
     [ApiController]
     public class QuestionsController : QuestionsDBContextController<Questions, QuestionRepository>
     {
-        public QuestionsController()
+        public QuestionsController(QuestionRepository repository): base(repository)
         {
 
         }

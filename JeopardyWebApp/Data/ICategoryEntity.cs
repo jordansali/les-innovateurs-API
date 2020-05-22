@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JeopardyWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,6 @@ namespace JeopardyWebApp.Data
         string CategoryName_En { get; set; }
 
         string CategoryName_Fr { get; set; }
+
     }
 }
