@@ -124,14 +124,32 @@ namespace JeopardyWebApp.Controllers
         public async Task<ActionResult<IEnumerable<TEntity>>> Get(bool rand = false)
         {
             var question = await repository.GetRandom();
-            if (question == null)
+            if (question.Count == 0)
             {
                 return NotFound();
             }
             return Ok(question);
         }
 
+        /// <summary>
+        ///Get questions by points
+        /// </summary>
 
+        /// <returns></returns>
+        // GetRandom: api/[controller]/5
+        [HttpGet("point:int/bool")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<TEntity>>> Get(int points,bool difficulty = true)
+        {
+            var question = await repository.GetQuestionsByPoints(points);
+            if (question.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(question);
+        }
     }
 
 }

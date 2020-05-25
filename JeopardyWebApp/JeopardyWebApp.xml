@@ -80,6 +80,12 @@
              </summary>
             <returns></returns>
         </member>
+        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get(System.Int32,System.Boolean)">
+             <summary>
+            Get questions by points
+             </summary>
+            <returns></returns>
+        </member>
         <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.AddCategory(`0)">
             <summary>
             Add a category

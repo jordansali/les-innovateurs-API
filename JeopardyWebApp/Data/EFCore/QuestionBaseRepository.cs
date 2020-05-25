@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -95,9 +96,6 @@ namespace JeopardyWebApp.Data.EFCore
             var entities = new List<TEntity>();
 
             entities.Add(entity[randomEntityNumber]);
-            //var randomEntity = entity.IndexOf(randomEntityNumber);
-
-            
             
             return entities;
 
@@ -111,7 +109,15 @@ namespace JeopardyWebApp.Data.EFCore
         {
             //TODO - FIGURE OUT HOW TO GET LIST OF QUESTIONS BY POINTS
             var entity = await context.Set<TEntity>().ToListAsync();
-            return entity;
+            var entities = new List<TEntity>();
+
+            foreach (var x in entity) {
+                if (x.Points == points) {
+                    entities.Add(x);
+                }
+            }
+
+            return entities;
         }
 
     }
