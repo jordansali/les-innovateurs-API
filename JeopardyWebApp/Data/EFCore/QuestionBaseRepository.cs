@@ -94,7 +94,7 @@ namespace JeopardyWebApp.Data.EFCore
 
             //var randomEntity = entity.IndexOf(randomEntityNumber);
 
-            return randomEntity;
+            return entity;
 
         }
 
