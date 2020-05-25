@@ -88,7 +88,13 @@ namespace JeopardyWebApp.Data.EFCore
         {
             ///TODO  - FIGURE OUT HOW TO MAKE IT RANDOM
             var entity = await context.Set<TEntity>().ToListAsync();
-            return entity;
+
+            Random rnd = new Random();
+            int randomEntityNumber = rnd.Next(entity.Count);
+
+            //var randomEntity = entity.IndexOf(randomEntityNumber);
+
+            return randomEntity;
 
         }
 

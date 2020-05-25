@@ -31,8 +31,6 @@ namespace JeopardyWebApp.Controllers
         {
             var categories = await repository.GetAllCategories();
 
-
-
             return Ok(categories);
         }
         /// <summary>
@@ -88,7 +86,9 @@ namespace JeopardyWebApp.Controllers
         public async Task<ActionResult<TEntity>> Post(TEntity category)
         {
             await repository.AddCategory(category);
-            return CreatedAtAction("Get", new { id = category.Id }, category);
+            var createdCategory = CreatedAtAction("Get", new { id = category.Id }, category);
+
+            return createdCategory;
         }
 
         /// <summary>
