@@ -92,9 +92,14 @@ namespace JeopardyWebApp.Data.EFCore
             Random rnd = new Random();
             int randomEntityNumber = rnd.Next(entity.Count);
 
+            var entities = new List<TEntity>();
+
+            entities.Add(entity[randomEntityNumber]);
             //var randomEntity = entity.IndexOf(randomEntityNumber);
 
-            return entity;
+            
+            
+            return entities;
 
         }
 

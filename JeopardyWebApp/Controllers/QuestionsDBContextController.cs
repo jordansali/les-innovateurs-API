@@ -102,13 +102,36 @@ namespace JeopardyWebApp.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<TEntity>> Delete(int id)
         {
-            var category = await repository.DeleteQuestion(id);
-            if (category == null)
+            var question = await repository.DeleteQuestion(id);
+            if (question == null)
             {
                 return NotFound();
             }
-            return Ok(category);
+            return Ok(question);
         }
+
+
+        /// <summary>
+        ///Get a random question
+        /// </summary>
+
+        /// <returns></returns>
+        // GetRandom: api/[controller]/5
+        [HttpGet("bool")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<TEntity>>> Get(bool rand = false)
+        {
+            var question = await repository.GetRandom();
+            if (question == null)
+            {
+                return NotFound();
+            }
+            return Ok(question);
+        }
+
+
     }
 
 }

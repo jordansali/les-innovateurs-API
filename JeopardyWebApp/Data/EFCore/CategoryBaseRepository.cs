@@ -51,6 +51,9 @@ namespace JeopardyWebApp.Data.EFCore
         public async Task<List<TEntity>> GetAllCategories()
         {
             var entity = await context.Set<TEntity>().ToListAsync();
+
+       
+
             return entity;
 
         }
