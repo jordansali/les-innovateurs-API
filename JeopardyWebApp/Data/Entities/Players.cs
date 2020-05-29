@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace JeopardyWebApp.Models
+namespace JeopardyWebApp.Data.Entities
 {
-    public partial class Players
+    public class Players
     {
         public int PlayerId { get; set; }
         public string EmailAddress { get; set; }

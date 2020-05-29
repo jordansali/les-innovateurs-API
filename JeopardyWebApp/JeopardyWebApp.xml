@@ -4,258 +4,73 @@
         <name>JeopardyWebApp</name>
     </assembly>
     <members>
-        <member name="M:JeopardyWebApp.Controllers.CategoryDBContextController`2.Get">
-            <summary>
-            Get a list of all categories
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.CategoryDBContextController`2.Get(System.Int32)">
-            <summary>
-            Get category by id
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.CategoryDBContextController`2.Put(System.Int32,`0)">
-            <summary>
-            Update a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.CategoryDBContextController`2.Post(`0)">
-            <summary>
-            Create a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.CategoryDBContextController`2.Delete(System.Int32)">
-            <summary>
-            Delete a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get">
-            <summary>
-            Get a list of all questions
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get(System.Int32)">
-            <summary>
-            Get question by id
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Put(System.Int32,`0)">
-            <summary>
-            Update a question
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Post(`0)">
-            <summary>
-            Create a question
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Delete(System.Int32)">
-            <summary>
-            Delete a question
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get(System.Boolean)">
-             <summary>
-            Get a random question
-             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Controllers.QuestionsDBContextController`2.Get(System.Int32,System.Boolean)">
-             <summary>
-            Get questions by points
-             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.AddCategory(`0)">
-            <summary>
-            Add a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.DeleteCategory(System.Int32)">
-            <summary>
-            Delete a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.GetAllCategories">
-            <summary>
-            Get a list of all categories
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.GetCategoryById(System.Int32)">
-            <summary>
-            Get category by id
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.CategoryBaseRepository`2.UpdateCategory(`0)">
-            <summary>
-            Update an existing category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.AddQuestion(`0)">
-            <summary>
-            Add a Question
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.DeleteQuestion(System.Int32)">
-            <summary>
-            Delete a category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.GetAllQuestions">
-            <summary>
-            Get a list of all categories
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.GetQuestionById(System.Int32)">
-            <summary>
-            Get category by id
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.UpdateQuestion(`0)">
-            <summary>
-            Update an existing category
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.GetRandom">
-            <summary>
-            Get question randomly
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:JeopardyWebApp.Data.EFCore.QuestionBaseRepository`2.GetQuestionsByPoints(System.Int32)">
-            <summary>
-            Get a list of question by point value
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:JeopardyWebApp.Data.ICategoryRepository`1">
+        <member name="T:JeopardyWebApp.Data.IJeopardyRepository">
             <summary>
             Interface for Category Repository
             </summary>
         </member>
-        <member name="M:JeopardyWebApp.Data.ICategoryRepository`1.GetAllCategories">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetAllCategories">
             <summary>
             Get a list of all categories
             </summary>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.ICategoryRepository`1.GetCategoryById(System.Int32)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetCategoryById(System.Int32)">
             <summary>
             Get category by id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.ICategoryRepository`1.AddCategory(`0)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.AddCategory(JeopardyWebApp.Data.Entities.Categories)">
             <summary>
             Add a category
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:JeopardyWebApp.Data.ICategoryRepository`1.UpdateCategory(`0)">
-            <summary>
-            Update a category
-            </summary>
-            <param name="entityToUpdate"></param>
-            <param name="entity"></param>
-            <param name="id"></param>
-        </member>
-        <member name="M:JeopardyWebApp.Data.ICategoryRepository`1.DeleteCategory(System.Int32)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.DeleteCategory(JeopardyWebApp.Data.Entities.Categories)">
             <summary>
             Delete a category
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.GetAllQuestions">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetAllQuestions">
             <summary>
             Get a list of all questions
             </summary>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.GetQuestionById(System.Int32)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetQuestionById(System.Int32)">
             <summary>
             Get question by id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.GetRandom">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetRandomQuestion">
             <summary>
             Get question randomly
             </summary>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.GetQuestionsByPoints(System.Int32)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.GetQuestionsByPoints(System.Int32)">
             <summary>
             Get a list of question by point value
             </summary>
             <param name="points"></param>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.AddQuestion(`0)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.AddQuestion(JeopardyWebApp.Data.Entities.Questions)">
             <summary>
             Add a question
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.UpdateQuestion(`0)">
-            <summary>
-            Update a question
-            </summary>
-            <param name="entityToUpdate"></param>
-            <param name="entity"></param>
-            <param name="id"></param>
-        </member>
-        <member name="M:JeopardyWebApp.Data.IQuestionRepository`1.DeleteQuestion(System.Int32)">
+        <member name="M:JeopardyWebApp.Data.IJeopardyRepository.DeleteQuestion(JeopardyWebApp.Data.Entities.Questions)">
             <summary>
             Delete a question
             </summary>
             <param name="entity"></param>
-        </member>
-        <member name="M:JeopardyWebApp.Models.Categories.#ctor">
-            <summary>
-            
-            </summary>
         </member>
     </members>
 </doc>

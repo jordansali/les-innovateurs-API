@@ -1,24 +1,16 @@
-﻿using System.Collections.Generic;
-using JeopardyWebApp.Data;
+﻿using JeopardyWebApp.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JeopardyWebApp.Models
+namespace JeopardyWebApp.Data.Entities
 {
-    public partial class Categories : ICategoryEntity
+    public class Categories
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public Categories()
-        {
-            Questions = new HashSet<Questions>();
-        }
-
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
+        [Required]
         public string CategoryName_En { get; set; }
         public string CategoryName_Fr { get; set; }
 
