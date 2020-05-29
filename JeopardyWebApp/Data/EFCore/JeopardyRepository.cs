@@ -60,43 +60,43 @@ namespace JeopardyWebApp.Data.EFCore
         // Questions        
         public void AddQuestion(Questions question) 
         {
-            throw new NotImplementedException();
-            //_context.Questions.Add(question); 
+            //throw new NotImplementedException();
+            _context.Questions.Add(question); 
         }
 
         public void DeleteQuestion(Questions question) 
         {
-            throw new NotImplementedException();
-            //_context.Questions.Remove(question); 
+            //throw new NotImplementedException();
+            _context.Questions.Remove(question); 
         }
 
         public async Task<Questions[]> GetAllQuestions()
         {
-            throw new NotImplementedException();
-            //IQueryable<Questions> query = _context.Questions;
+            //throw new NotImplementedException();
+            IQueryable<Questions> query = _context.Questions;
 
-            //return await query.ToArrayAsync();
+            return await query.ToArrayAsync();
         }
 
         public async Task<Questions> GetQuestionByCategory(string nameEn, int questionId) 
         {
-            throw new NotImplementedException();
-            //IQueryable<Questions> query = _context.Questions;
+            //throw new NotImplementedException();
+            IQueryable<Questions> query = _context.Questions;
 
-            //query = query.Where(q => q.Id == questionId && q.Category.CategoryNameEn == nameEn);
+            query = query.Where(q => q.Id == questionId && q.Category.CategoryNameEn == nameEn);
 
-            //return await query.FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync();
             
         }
 
         public async Task<Questions> GetQuestionById(int id) 
         {
-            throw new NotImplementedException();
-            //IQueryable<Questions> query = _context.Questions;
+            //throw new NotImplementedException();
+            IQueryable<Questions> query = _context.Questions;
 
-            //query = query.Where(q => q.Id == id);
+            query = query.Where(q => q.Id == id);
            
-            //return await query.FirstOrDefaultAsync();
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task<Questions> GetRandomQuestion() 
@@ -109,11 +109,11 @@ namespace JeopardyWebApp.Data.EFCore
         public async Task<Questions[]> GetQuestionsByPoints(int points) 
         {
             throw new NotImplementedException();
-            //IQueryable<Questions> query = _context.Questions;
+            IQueryable<Questions> query = _context.Questions;
 
-            //query = query.Where(q => q.Points == points);
+            query = query.Where(q => q.Points == points);
 
-            //return await query.ToArrayAsync();
+            return await query.ToArrayAsync();
         }
 
     }
