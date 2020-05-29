@@ -8,13 +8,16 @@ namespace JeopardyWebApp.Models
     {        
      
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
         [Required]
-        public string CategoryNameEn { get; set; }
-        public string CategoryNameFr { get; set; }
+        public string CategoryName_En { get; set; }
+        public string CategoryName_Fr { get; set; }
 
         public virtual ICollection<QuestionsModel> Questions { get; set; }
 
+
+        /*
         // Include Question information <- optional
         public int QuestionId { get; set; }
         public string QuestionQuestionEn { get; set; }
@@ -24,6 +27,6 @@ namespace JeopardyWebApp.Models
         public int? QuestionPoints { get; set; }
         public int? QuestionTimeLimit { get; set; }
         public string QuestionHint { get; set; }
-
+        */
     }
 }

@@ -11,9 +11,9 @@ namespace JeopardyWebApp.Models
         public int Id { get; set; }        
         [Required]
         [StringLength(250)]
-        public string QuestionEn { get; set; }                        
+        public string Question_En { get; set; }                        
         [Required]
-        public string AnswerFr { get; set; }                        
+        public string Answer_Fr { get; set; }                        
         [Required]
         [Range(100,1000)]
         public int? Points { get; set; }        
@@ -23,8 +23,8 @@ namespace JeopardyWebApp.Models
 
         // Optional attributes
         [StringLength(250)]
-        public string QuestionFr { get; set; }
-        public string AnswerEn { get; set; }
+        public string Question_Fr { get; set; }
+        public string Answer_En { get; set; }
         public string Hint { get; set; }
     }
 }

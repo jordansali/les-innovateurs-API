@@ -16,7 +16,7 @@ namespace JeopardyWebApp.Data.EFCore
 
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Questions> Questions { get; set; }
-        public DbSet<Players> Players { get; set; }
+        //public DbSet<Players> Players { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace JeopardyWebApp.Data.EFCore
 
                 entity.ToTable("categories");
 
-                entity.HasIndex(e => e.CategoryNameEn)
+                entity.HasIndex(e => e.CategoryName_En)
                     .HasName("FJ_UniqueCategory")
                     .IsUnique();
 
@@ -35,54 +35,54 @@ namespace JeopardyWebApp.Data.EFCore
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.CategoryNameEn)
+                entity.Property(e => e.CategoryName_En)
                     .HasColumnName("categoryName_en")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.CategoryNameFr)
+                entity.Property(e => e.CategoryName_Fr)
                     .HasColumnName("categoryName_fr")
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
             });
 
-            modelBuilder.Entity<PlayersModel>(entity =>
-            {
-                entity.HasKey(e => e.PlayerId)
-                    .HasName("PRIMARY");
+            //modelBuilder.Entity<PlayersModel>(entity =>
+            //{
+            //    entity.HasKey(e => e.PlayerId)
+            //        .HasName("PRIMARY");
 
-                entity.ToTable("players");
+            //    entity.ToTable("players");
 
-                entity.HasIndex(e => e.EmailAddress)
-                    .HasName("FJ_UniqueEmail")
-                    .IsUnique();
+            //    entity.HasIndex(e => e.EmailAddress)
+            //        .HasName("FJ_UniqueEmail")
+            //        .IsUnique();
 
-                entity.Property(e => e.PlayerId)
-                    .HasColumnName("id")
-                    .HasColumnType("int(11)");
+            //    entity.Property(e => e.PlayerId)
+            //        .HasColumnName("id")
+            //        .HasColumnType("int(11)");
 
-                entity.Property(e => e.EmailAddress)
-                    .HasColumnName("emailAddress")
-                    .HasColumnType("varchar(50)")
-                    .HasCharSet("latin1")
-                    .HasCollation("latin1_swedish_ci");
+            //    entity.Property(e => e.EmailAddress)
+            //        .HasColumnName("emailAddress")
+            //        .HasColumnType("varchar(50)")
+            //        .HasCharSet("latin1")
+            //        .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasColumnType("varchar(30)")
-                    .HasCharSet("latin1")
-                    .HasCollation("latin1_swedish_ci");
+            //    entity.Property(e => e.Name)
+            //        .HasColumnName("name")
+            //        .HasColumnType("varchar(30)")
+            //        .HasCharSet("latin1")
+            //        .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.Ranking)
-                    .HasColumnName("ranking")
-                    .HasColumnType("int(11)");
+            //    entity.Property(e => e.Ranking)
+            //        .HasColumnName("ranking")
+            //        .HasColumnType("int(11)");
 
-                entity.Property(e => e.Score)
-                    .HasColumnName("score")
-                    .HasColumnType("int(11)");
-            });
+            //    entity.Property(e => e.Score)
+            //        .HasColumnName("score")
+            //        .HasColumnType("int(11)");
+            //});
 
             modelBuilder.Entity<QuestionsModel>(entity =>
             {
@@ -95,13 +95,13 @@ namespace JeopardyWebApp.Data.EFCore
                     .HasColumnName("id")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.AnswerEn)
+                entity.Property(e => e.Answer_En)
                     .HasColumnName("answer_en")
                     .HasColumnType("varchar(100)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.AnswerFr)
+                entity.Property(e => e.Answer_Fr)
                     .HasColumnName("answer_fr")
                     .HasColumnType("varchar(100)")
                     .HasCharSet("latin1")
@@ -117,13 +117,13 @@ namespace JeopardyWebApp.Data.EFCore
                     .HasColumnName("points")
                     .HasColumnType("int(11)");
 
-                entity.Property(e => e.QuestionEn)
+                entity.Property(e => e.Question_En)
                     .HasColumnName("question_en")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
 
-                entity.Property(e => e.QuestionFr)
+                entity.Property(e => e.Question_Fr)
                     .HasColumnName("question_fr")
                     .HasColumnType("varchar(250)")
                     .HasCharSet("latin1")

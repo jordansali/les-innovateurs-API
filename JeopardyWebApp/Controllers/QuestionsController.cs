@@ -20,7 +20,7 @@ namespace JeopardyWebApp.Controllers
 
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
-        
+
         public QuestionsController(IJeopardyRepository repository, IMapper mapper)
         {
             _repository = repository;
@@ -28,7 +28,7 @@ namespace JeopardyWebApp.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task<ActionResult<QuestionsModel>> Get()
         {
             try
@@ -62,10 +62,10 @@ namespace JeopardyWebApp.Controllers
 
                         _repository.AddQuestion(question);
 
-                        if(await _repository.SaveChangesAsync())
+                        if (await _repository.SaveChangesAsync())
                         {
                             return CreatedAtRoute("",
-                                new { category = category,  id = question.Id},
+                                new { category = category, id = question.Id },
                                 _mapper.Map<QuestionsModel>(question));
                         }
                     }
@@ -79,7 +79,6 @@ namespace JeopardyWebApp.Controllers
         }
 
         [HttpPut("{id}")]
-        [Route("", Name = "PutById")]
         public async Task<ActionResult<QuestionsModel>> Put(int id, QuestionsModel model)
         {
             try
@@ -91,13 +90,13 @@ namespace JeopardyWebApp.Controllers
 
                     _mapper.Map(model, question);
 
-                    if(question.Category.CategoryId != model.Category.Id)
+                    if (question.Category.Id != model.Category.Id)
                     {
                         var category = await _repository.GetCategoryById(model.Category.Id);
                         if (category != null) question.Category = category;
                     }
 
-                    if(await _repository.SaveChangesAsync())
+                    if (await _repository.SaveChangesAsync())
                     {
                         return Ok(_mapper.Map<QuestionsModel>(model));
                     }
@@ -108,7 +107,7 @@ namespace JeopardyWebApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
             return BadRequest(ModelState);
-        }        
+        }
 
         [HttpDelete]
         public async Task<ActionResult<QuestionsModel>> Delete(int id)

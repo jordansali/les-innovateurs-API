@@ -12,7 +12,7 @@ namespace JeopardyWebApp.Data
                 .ReverseMap();
 
             CreateMap<Questions, QuestionsModel>()
-                .ForMember(q => q.Category.Id, opt => opt.Ignore()) //don't overwrite category   
+                .ForMember(q => q.Category, opt => opt.Ignore()) //don't overwrite category   
                 .ReverseMap();            
 
             // TODO: Players

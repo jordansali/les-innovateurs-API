@@ -19,17 +19,18 @@ namespace JeopardyWebApp.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase 
     {
+
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
-       
-        public CategoriesController(IJeopardyRepository repository, IMapper mapper) 
+
+        public CategoriesController(IJeopardyRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-              
-        [HttpGet("{id}")]
+
+        [HttpGet]
         public async Task<ActionResult<CategoriesModel>> Get()
         {
             try
@@ -40,9 +41,9 @@ namespace JeopardyWebApp.Controllers
 
                 return Ok(mappedResult);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
 
@@ -52,7 +53,7 @@ namespace JeopardyWebApp.Controllers
         {
             try
             {
-                if(await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
+                if (await _repository.GetCategoryByCategoryNameEn(model.CategoryName_En) != null)
                 {
                     ModelState.AddModelError("Id", "Id in use.");
                 }
@@ -67,7 +68,7 @@ namespace JeopardyWebApp.Controllers
                     {
                         var newModel = _mapper.Map<CategoriesModel>(cat);
 
-                        return CreatedAtRoute("", new { cat = newModel.CategoryNameEn}, newModel);
+                        return CreatedAtRoute("", new { cat = newModel.CategoryName_En }, newModel);
                     }
                 }
             }
@@ -76,43 +77,15 @@ namespace JeopardyWebApp.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
             return BadRequest(ModelState);
-            
+
         }
-        
-        [HttpPut("{id}")]
-        [Route("",Name = "PutById")]
+
+        [HttpPut("{id:int}")]        
         public async Task<ActionResult<CategoriesModel>> Put(int id, CategoriesModel catModel)
         {
             try
             {
                 var cat = await _repository.GetCategoryById(id);
-                if (cat == null) return NotFound();
-
-                _mapper.Map(catModel, cat);
-
-                if(await _repository.SaveChangesAsync())
-                {
-                    return Ok(_mapper.Map<CategoriesModel>(cat));
-                }
-                else
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError);
-                }
-            }
-            catch(Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, ex);
-            }
-            
-        }
-       
-        [HttpPut("{categoryNameEn}")]
-        [Route("", Name = "PutByName")]
-        public async Task<ActionResult<CategoriesModel>> Put(string categoryNameEn, CategoriesModel catModel)
-        {
-            try
-            {
-                var cat = await _repository.GetCategoryByCategoryNameEn(categoryNameEn);
                 if (cat == null) return NotFound();
 
                 _mapper.Map(catModel, cat);
@@ -130,10 +103,10 @@ namespace JeopardyWebApp.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
+
         }
 
-
-        [HttpDelete]        
+        [HttpDelete]
         public async Task<ActionResult<CategoriesModel>> Delete(int id)
         {
             try
@@ -143,7 +116,7 @@ namespace JeopardyWebApp.Controllers
 
                 _repository.DeleteCategory(cat);
 
-                if(await _repository.SaveChangesAsync())
+                if (await _repository.SaveChangesAsync())
                 {
                     return Ok();
                 }
@@ -151,12 +124,13 @@ namespace JeopardyWebApp.Controllers
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
+
     }
 }

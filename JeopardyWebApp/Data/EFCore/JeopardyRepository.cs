@@ -43,7 +43,7 @@ namespace JeopardyWebApp.Data.EFCore
         {
             IQueryable<Categories> query = _context.Categories;
 
-            query = query.Where(c => c.CategoryNameEn == nameEn);
+            query = query.Where(c => c.CategoryName_En == nameEn);
 
             return await query.FirstOrDefaultAsync();
         }
@@ -52,7 +52,7 @@ namespace JeopardyWebApp.Data.EFCore
         {
             IQueryable<Categories> query = _context.Categories;
 
-            query = query.Where(c => c.CategoryId == id);
+            query = query.Where(c => c.Id == id);
 
             return await query.FirstOrDefaultAsync();
         }  
@@ -83,7 +83,7 @@ namespace JeopardyWebApp.Data.EFCore
             //throw new NotImplementedException();
             IQueryable<Questions> query = _context.Questions;
 
-            query = query.Where(q => q.Id == questionId && q.Category.CategoryNameEn == nameEn);
+            query = query.Where(q => q.Id == questionId && q.Category.CategoryName_En == nameEn);
 
             return await query.FirstOrDefaultAsync();
             

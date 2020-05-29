@@ -38,7 +38,7 @@ namespace JeopardyWebApp
             app.UseSwaggerUI(setupAction =>
             {
                 setupAction.SwaggerEndpoint("swagger/CategorySpec/swagger.json",
-                "CategoriesApi");
+                "JeopardyApi");
                 setupAction.RoutePrefix = ""; //will make swagger availiable at root
             });
 
@@ -56,16 +56,7 @@ namespace JeopardyWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
-            var mappingConfig = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new JeopardyMappingProfile());
-            });
-            IMapper mapper = mappingConfig.CreateMapper();
-            services.AddSingleton(mapper);
-            //services.AddAutoMapper(typeof(Startup));  // dependency injection 
-            //services.AddControllersWithViews();       // dependency injection 
+            services.AddControllers();            
 
             services.AddDbContext<JeopardyDbContext>(options => options
              .UseMySql(Configuration.GetConnectionString("FeltGameContext"),
@@ -108,14 +99,21 @@ namespace JeopardyWebApp
                 var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
                 setupAction.IncludeXmlComments(xmlCommentsFullPath);
             });
-            services.AddScoped<IJeopardyRepository, JeopardyRepository>();                            
+            services.AddScoped<IJeopardyRepository, JeopardyRepository>();
+
+            var mappingConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new JeopardyMappingProfile());
+            });
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.AddAutoMapper(typeof(Startup));  // dependency injection 
+            //services.AddControllersWithViews();       // dependency injection 
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);                    
+            );                    
             
-        }
-
-        
+        }        
     }
 }
