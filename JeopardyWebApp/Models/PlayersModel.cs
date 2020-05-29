@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace JeopardyWebApp.Models
 {
-    public partial class Players
+    public partial class PlayersModel
     {
         public int PlayerId { get; set; }
         public string EmailAddress { get; set; }
