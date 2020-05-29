@@ -15,8 +15,8 @@ namespace JeopardyWebApp.Data.EFCore
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
         public DbSet<Categories> Categories { get; set; }
-        public DbSet<QuestionsModel> Questions { get; set; }
-        public DbSet<PlayersModel> Players { get; set; }
+        public DbSet<Questions> Questions { get; set; }
+        public DbSet<Players> Players { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
