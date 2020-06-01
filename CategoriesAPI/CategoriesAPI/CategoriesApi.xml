@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CategoriesAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Get">
+            <summary>
+            Get a list of all categories
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Get(System.Int32)">
+            <summary>
+            Get category by id
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Put(System.Int32,`0)">
+            <summary>
+            Update a category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Post(`0)">
+            <summary>
+            Create a category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Controllers.CategoryDBContextController`2.Delete(System.Int32)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.EFCore.CategoryBaseRepository`2.AddCategory(`0)">
+            <summary>
+            Add a category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.EFCore.CategoryBaseRepository`2.DeleteCategory(System.Int32)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.EFCore.CategoryBaseRepository`2.GetAllCategories">
+            <summary>
+            Get a list of all categories
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.EFCore.CategoryBaseRepository`2.GetCategoryById(System.Int32)">
+            <summary>
+            Get category by id
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.EFCore.CategoryBaseRepository`2.UpdateCategory(`0)">
+            <summary>
+            Update an existing category
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CategoriesAPI.Data.ICategoryRepository`1">
+            <summary>
+            Interface for Category Repository
+            </summary>
+        </member>
+        <member name="M:CategoriesAPI.Data.ICategoryRepository`1.GetAllCategories">
+            <summary>
+            Get a list of all categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.ICategoryRepository`1.GetCategoryById(System.Int32)">
+            <summary>
+            Get category by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CategoriesAPI.Data.ICategoryRepository`1.AddCategory(`0)">
+            <summary>
+            Add a category
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Data.ICategoryRepository`1.UpdateCategory(`0)">
+            <summary>
+            Update a category
+            </summary>
+            <param name="entityToUpdate"></param>
+            <param name="entity"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:CategoriesAPI.Data.ICategoryRepository`1.DeleteCategory(System.Int32)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:CategoriesAPI.Models.Categories.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JeopardyWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetAllCategories">
+            <summary>
+            Get a list of all categories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetCategoryById(System.Int32)">
+            <summary>
+            Get category by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.AddCategory(JeopardyWebAPI.Models.Categories)">
+            <summary>
+            Add a category
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.DeleteCategory(JeopardyWebAPI.Models.Categories)">
+            <summary>
+            Delete a category
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetAllQuestions">
+            <summary>
+            Get a list of all questions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetQuestionById(System.Int32)">
+            <summary>
+            Get question by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetRandomQuestion">
+            <summary>
+            Get question randomly
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetQuestionsByPoints(System.Int32)">
+            <summary>
+            Get a list of question by point value
+            </summary>
+            <param name="points"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.AddQuestion(JeopardyWebAPI.Models.Questions)">
+            <summary>
+            Add a question
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.DeleteQuestion(JeopardyWebAPI.Models.Questions)">
+            <summary>
+            Delete a question
+            </summary>
+            <param name="entity"></param>
+        </member>
+    </members>
+</doc>
