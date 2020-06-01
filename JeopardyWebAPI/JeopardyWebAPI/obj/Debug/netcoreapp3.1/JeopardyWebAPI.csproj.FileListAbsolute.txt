@@ -271,3 +271,4 @@ C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI\ob
 C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI\obj\Debug\netcoreapp3.1\JeopardyWebAPI.dll
 C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI\obj\Debug\netcoreapp3.1\JeopardyWebAPI.pdb
 C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI\obj\Debug\netcoreapp3.1\JeopardyWebAPI.genruntimeconfig.cache
+C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI\obj\Debug\netcoreapp3.1\JeopardyWebAPI.csprojAssemblyReference.cache

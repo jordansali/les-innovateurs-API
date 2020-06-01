@@ -108,7 +108,7 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions[]> GetQuestionsByPoints(int points)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
             IQueryable<Questions> query = _context.Questions;
 
             query = query.Where(q => q.Points == points);

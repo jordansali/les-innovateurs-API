@@ -45,6 +45,23 @@ namespace JeopardyWebAPI.Controllers
             }
         }
 
+        [HttpGet("{points}")]
+        public async Task<ActionResult<QuestionsModel>> GetByPoints(int points)
+        {
+            try
+            {
+                var result = await _repository.GetQuestionsByPoints(points);
+
+                var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
+
+                return Ok(mappedResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
 
         [HttpPost]
         public async Task<ActionResult<QuestionsModel>> Post(QuestionsModel model)
@@ -54,7 +71,7 @@ namespace JeopardyWebAPI.Controllers
                 if (ModelState.IsValid)
                 {
                     // get the question's category
-                    var category = await _repository.GetCategoryById(model.Category.Id);
+                    var category = await _repository.GetCategoryById(model.CategoryId);
                     if (category != null)
                     {
                         var question = _mapper.Map<Questions>(model);
@@ -90,9 +107,9 @@ namespace JeopardyWebAPI.Controllers
 
                     _mapper.Map(model, question);
 
-                    if (question.Category.Id != model.Category.Id)
+                    if (question.CategoryId != model.CategoryId)
                     {
-                        var category = await _repository.GetCategoryById(model.Category.Id);
+                        var category = await _repository.GetCategoryById(model.CategoryId);
                         if (category != null) question.Category = category;
                     }
 

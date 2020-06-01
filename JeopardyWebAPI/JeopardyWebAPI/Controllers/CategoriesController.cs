@@ -45,8 +45,25 @@ namespace JeopardyWebAPI.Controllers
                 }
             }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoriesModel>> GetById(int id)
+        {
+            try
+            {
+                var result = await _repository.GetCategoryById(id);
 
-            [HttpPost]
+                var mappedResult = _mapper.Map<CategoriesModel>(result);
+
+                return Ok(mappedResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+
+        [HttpPost]
             public async Task<ActionResult<CategoriesModel>> Post(CategoriesModel model)
             {
                 try
