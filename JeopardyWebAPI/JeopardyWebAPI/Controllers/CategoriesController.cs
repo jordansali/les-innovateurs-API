@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using JeopardyWebAPI.Data;
 using JeopardyWebAPI.Data.EFCore;
 using JeopardyWebAPI.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -57,13 +55,14 @@ namespace JeopardyWebAPI.Controllers
                 var result = await _repository.GetCategoryById(id);
                 var mappedResult = _mapper.Map<CategoriesModel>(result);
 
-               // int something = 0;
-                //if id entered does not exist, return error Bad Request "id does not exist"?
-
                 //if id entered contains string
-            /*    if (int.TryParse(id, out something))
+                /* int checkInt;
+                if (int.TryParse(id.ToString(), out checkInt))
                 {
-                    BadRequest("incorrect format for id");
+                    if (checkInt == 0)
+                    {
+                        return BadRequest("Needs to be an integer");
+                    }
                 } */
 
                 //if category object does not exist, return this error

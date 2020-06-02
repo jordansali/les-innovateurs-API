@@ -1,5 +1,4 @@
 ﻿using JeopardyWebAPI.Models;
-using JeopardyWebAPI.Data;
 using System.Threading.Tasks;
 
 namespace JeopardyWebAPI.Data.EFCore

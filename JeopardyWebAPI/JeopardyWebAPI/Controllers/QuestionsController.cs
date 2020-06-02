@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using JeopardyWebAPI.Data;
 using JeopardyWebAPI.Data.EFCore;
 using JeopardyWebAPI.Models;
 using Microsoft.AspNetCore.Cors;

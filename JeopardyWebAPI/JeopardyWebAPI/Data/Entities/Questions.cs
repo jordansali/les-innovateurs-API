@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace JeopardyWebAPI.Models
+﻿namespace JeopardyWebAPI.Models
 {
     public partial class Questions
     {

@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using AutoMapper;
-using JeopardyWebAPI.Data;
+﻿using AutoMapper;
 using JeopardyWebAPI.Models;
 
 namespace JeopardyWebAPI.Data
