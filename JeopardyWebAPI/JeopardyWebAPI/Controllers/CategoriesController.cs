@@ -90,6 +90,10 @@ namespace JeopardyWebAPI.Controllers
                     {
                         ModelState.AddModelError("Id", "This name for this Category already exists.");
                     }
+                if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) == null)
+                {
+                    ModelState.AddModelError("Id", "Category Name cannot be empty");
+                }
                 //Make sure to return error if an existing id is entered
                 if (await _repository.GetCategoryById(model.Id) != null)
                 {

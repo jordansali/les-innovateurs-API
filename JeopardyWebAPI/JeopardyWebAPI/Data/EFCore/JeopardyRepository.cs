@@ -63,22 +63,17 @@ namespace JeopardyWebAPI.Data.EFCore
         // Questions        
         public void AddQuestion(Questions question)
         {
-            //throw new NotImplementedException();
             _context.Questions.Add(question);
         }
 
         public void DeleteQuestion(Questions question)
         {
-            //throw new NotImplementedException();
             _context.Questions.Remove(question);
         }
 
         public async Task<Questions[]> GetAllQuestions()
         {
-            //throw new NotImplementedException();
-
            //   IQueryable<Questions> query = _context.Questions;
-           //Questions.attach, questions.add, questions.include, questions.join
             var query = await _context.Questions.Include(c => c.Category).ToArrayAsync();
 
             return query;
@@ -86,7 +81,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions> GetQuestionByCategory(string nameEn, int questionId)
         {
-            //throw new NotImplementedException();
             IQueryable<Questions> query = _context.Questions;
 
             query = query.Where(q => q.Id == questionId && q.Category.CategoryNameEn == nameEn);
@@ -97,7 +91,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions> GetQuestionById(int id)
         {
-            //throw new NotImplementedException();
             IQueryable<Questions> query = _context.Questions;
 
             query = query.Where(q => q.Id == id);
@@ -116,7 +109,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions[]> GetQuestionsByPoints(int points)
         {
-           // throw new NotImplementedException();
             IQueryable<Questions> query = _context.Questions;
 
             query = query.Where(q => q.Points == points);

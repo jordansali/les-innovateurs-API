@@ -34,6 +34,12 @@ namespace JeopardyWebAPI.Controllers
             {
                 var result = await _repository.GetAllQuestions();
                 var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
+
+                if (mappedResult == null)
+                {
+                    return NotFound("No questions found");
+                }
+
                 return Ok(mappedResult);
             }
             catch (Exception ex)
@@ -50,6 +56,11 @@ namespace JeopardyWebAPI.Controllers
                 var result = await _repository.GetQuestionsByPoints(points);
 
                 var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
+
+                if(mappedResult == null)
+                {
+                    return NotFound("No questions found");
+                }
 
                 return Ok(mappedResult);
             }
@@ -71,6 +82,13 @@ namespace JeopardyWebAPI.Controllers
                     var category = await _repository.GetCategoryById(model.CategoryId);
                     if (category != null)
                     {
+
+                        //required to put question
+                        if(model.QuestionEn == null)
+                        {
+                            return BadRequest("Question English cannot be null");
+                        }
+
                         var question = _mapper.Map<Questions>(model);
                         question.Category = category;
 

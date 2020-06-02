@@ -25,13 +25,11 @@ namespace JeopardyWebAPI.Data.EFCore
         /// <summary>
         /// Add a category
         /// </summary>
-        /// <param name="entity"></param>
         void AddCategory(Categories category);
 
         /// <summary>
         /// Delete a category
         /// </summary>
-        /// <param name="entity"></param>
         void DeleteCategory(Categories category);
 
         Task<Categories> GetCategoryByCategoryNameEn(string nameEn);
@@ -68,13 +66,11 @@ namespace JeopardyWebAPI.Data.EFCore
         /// <summary>
         /// Add a question
         /// </summary>
-        /// <param name="entity"></param>
         void AddQuestion(Questions question);
 
         /// <summary>
         /// Delete a question
         /// </summary>
-        /// <param name="entity"></param>
         void DeleteQuestion(Questions question);
 
 }

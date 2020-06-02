@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace JeopardyWebAPI.Models
 {
@@ -22,8 +23,8 @@ namespace JeopardyWebAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                // optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame", x => x.ServerVersion("10.2.31-mariadb"));
-                
+                 optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame", x => x.ServerVersion("10.2.31-mariadb"));
+                 //optionsBuilder.UseMySql(Microsoft.Extensions.Configuration.GetConnectionString("FeltGameContext"), x => x.ServerVersion("10.2.31-mariadb"));
             }
         }
 

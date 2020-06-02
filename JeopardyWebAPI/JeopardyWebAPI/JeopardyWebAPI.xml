@@ -21,13 +21,11 @@
             <summary>
             Add a category
             </summary>
-            <param name="entity"></param>
         </member>
         <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.DeleteCategory(JeopardyWebAPI.Models.Categories)">
             <summary>
             Delete a category
             </summary>
-            <param name="entity"></param>
         </member>
         <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetAllQuestions">
             <summary>
@@ -59,13 +57,11 @@
             <summary>
             Add a question
             </summary>
-            <param name="entity"></param>
         </member>
         <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.DeleteQuestion(JeopardyWebAPI.Models.Questions)">
             <summary>
             Delete a question
             </summary>
-            <param name="entity"></param>
         </member>
     </members>
 </doc>
