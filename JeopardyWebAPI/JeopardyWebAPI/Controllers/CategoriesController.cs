@@ -34,10 +34,14 @@ namespace JeopardyWebAPI.Controllers
                 try
                 {
                     var result = await _repository.GetAllCategories();
-
                     var mappedResult = _mapper.Map<IEnumerable<CategoriesModel>>(result);
 
-                    return Ok(mappedResult);
+                //if no categories exist in the database
+                if (mappedResult == null)
+                {
+                    return NotFound("Categories not found");
+                }
+                return Ok(mappedResult);
                 }
                 catch (Exception ex)
                 {
@@ -51,8 +55,22 @@ namespace JeopardyWebAPI.Controllers
             try
             {
                 var result = await _repository.GetCategoryById(id);
-
                 var mappedResult = _mapper.Map<CategoriesModel>(result);
+
+               // int something = 0;
+                //if id entered does not exist, return error Bad Request "id does not exist"?
+
+                //if id entered contains string
+            /*    if (int.TryParse(id, out something))
+                {
+                    BadRequest("incorrect format for id");
+                } */
+
+                //if category object does not exist, return this error
+                if (mappedResult == null)
+                {
+                    return NotFound("Category does not exist");
+                }
 
                 return Ok(mappedResult);
             }
@@ -68,12 +86,18 @@ namespace JeopardyWebAPI.Controllers
             {
                 try
                 {
+                //Make sure to return an error if an existing Category Name is entered
                     if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
                     {
-                        ModelState.AddModelError("Id", "Id in use.");
+                        ModelState.AddModelError("Id", "This name for this Category already exists.");
                     }
+                //Make sure to return error if an existing id is entered
+                if (await _repository.GetCategoryById(model.Id) != null)
+                {
+                    ModelState.AddModelError("Id", "This id for this category already exists.");
+                }
 
-                    if (ModelState.IsValid)
+                if (ModelState.IsValid)
                     {
                         var cat = _mapper.Map<Categories>(model);
 

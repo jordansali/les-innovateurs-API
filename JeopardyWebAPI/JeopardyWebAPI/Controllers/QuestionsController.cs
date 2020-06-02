@@ -34,11 +34,8 @@ namespace JeopardyWebAPI.Controllers
             try
             {
                 var result = await _repository.GetAllQuestions();
-
                 var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
-
                 return Ok(mappedResult);
-                //return Ok(result);
             }
             catch (Exception ex)
             {
@@ -78,7 +75,7 @@ namespace JeopardyWebAPI.Controllers
                         var question = _mapper.Map<Questions>(model);
                         question.Category = category;
 
-                        _repository.AddQuestion(question);
+                        _repository.AddQuestion(question);                    
 
                         if (await _repository.SaveChangesAsync())
                         {
@@ -142,7 +139,6 @@ namespace JeopardyWebAPI.Controllers
                     }
 
                     #endregion
-
 
 
                     if (question.CategoryId != model.CategoryId)
