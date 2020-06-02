@@ -38,6 +38,7 @@ namespace JeopardyWebAPI.Controllers
                 var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
 
                 return Ok(mappedResult);
+                //return Ok(result);
             }
             catch (Exception ex)
             {

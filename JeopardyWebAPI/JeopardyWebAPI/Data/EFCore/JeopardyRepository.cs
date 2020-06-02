@@ -34,9 +34,14 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Categories[]> GetAllCategories()
         {
-            IQueryable<Categories> query = _context.Categories;
+            
+           // IQueryable<Categories> query = _context.Categories;
+           
+            var query = await _context.Categories.Include(q => q.Questions).ToArrayAsync();
 
-            return await query.ToArrayAsync();
+            return query;
+
+           
         }
 
         public async Task<Categories> GetCategoryByCategoryNameEn(string nameEn)
@@ -73,9 +78,12 @@ namespace JeopardyWebAPI.Data.EFCore
         public async Task<Questions[]> GetAllQuestions()
         {
             //throw new NotImplementedException();
-            IQueryable<Questions> query = _context.Questions;
 
-            return await query.ToArrayAsync();
+           //   IQueryable<Questions> query = _context.Questions;
+           //Questions.attach, questions.add, questions.include, questions.join
+            var query = await _context.Questions.Include(c => c.Category).ToArrayAsync();
+
+            return query;
         }
 
         public async Task<Questions> GetQuestionByCategory(string nameEn, int questionId)
