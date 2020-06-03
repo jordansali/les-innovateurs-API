@@ -40,10 +40,11 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetRandomQuestion">
+        <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetQuestionsByCategory(System.Int32)">
             <summary>
-            Get question randomly
+            Get question by id
             </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:JeopardyWebAPI.Data.EFCore.IJeopardyRepository.GetQuestionsByPoints(System.Int32)">

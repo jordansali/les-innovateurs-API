@@ -1,5 +1,7 @@
 ﻿using JeopardyWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -73,19 +75,28 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions[]> GetAllQuestions()
         {
-           //   IQueryable<Questions> query = _context.Questions;
+           //IQueryable<Questions> query = _context.Questions;
             var query = await _context.Questions.Include(c => c.Category).ToArrayAsync();
 
             return query;
         }
 
-        public async Task<Questions> GetQuestionByCategory(string nameEn, int questionId)
+        public async Task<Questions[]> GetQuestionsByCategory(int categoryId)
         {
-            IQueryable<Questions> query = _context.Questions;
+            var query = _context.Questions.ToArray();
+          //  Questions[] results = new Questions()[];
+            int points = 100;
 
-            query = query.Where(q => q.Id == questionId && q.Category.CategoryNameEn == nameEn);
+            for (int i=0; i<5; i++)
+            {
+               // results[i] = (Questions) query.Where(q => q.Points == points);
+                points += 100;
+            }
 
-            return await query.FirstOrDefaultAsync();
+
+            //query = query.Where(q => q.Category.CategoryNameEn == nameEn);
+
+            return query;
 
         }
 
@@ -99,14 +110,7 @@ namespace JeopardyWebAPI.Data.EFCore
 
             return q;
         }
-
-        public async Task<Questions> GetRandomQuestion()
-        {
-            throw new System.NotImplementedException();
-
-            // TODO
-        }
-
+        //used to populate the game board
         public async Task<Questions[]> GetQuestionsByPoints(int points)
         {
             IQueryable<Questions> query = _context.Questions;
@@ -114,6 +118,61 @@ namespace JeopardyWebAPI.Data.EFCore
             query = query.Where(q => q.Points == points).Include(c => c.Category);
 
             return await query.ToArrayAsync();
+        }
+
+
+      //  Task<Questions[]> GetBoard(){
+        
+
+
+      //  }
+
+
+        public int[] RandomizeFiveCategories()
+        {
+            var query = _context.Categories.ToArray();
+            int length = query.Length;
+
+           // var rnd = new Random();
+         //   query = query.OrderBy(x => rnd.Next()).Take(5);
+
+
+           // return query;
+
+            var random = new Random();
+            int [] result = new int[5];
+
+            int i = 0;
+            while(i<5)
+            {
+                result[i] = query[random.Next(0, length)].Id;
+                if (CheckforDuplicates(result))
+                {
+                    break;
+                }
+                else
+                {
+                    i++;
+                }
+                
+            }                          
+
+            return result; 
+
+        }
+
+        public bool CheckforDuplicates(int[] array)
+        {
+            var duplicates = array
+             .GroupBy(p => p)
+             .Where(g => g.Count() > 1)
+             .Select(g => g.Key);
+
+
+            return (duplicates.Count() > 0);
+
+
+
         }
     }
 }

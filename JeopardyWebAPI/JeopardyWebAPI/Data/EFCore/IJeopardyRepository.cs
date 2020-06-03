@@ -8,6 +8,10 @@ namespace JeopardyWebAPI.Data.EFCore
         // General 
         Task<bool> SaveChangesAsync();
 
+      //  Task<Questions[]> GetBoard();
+
+
+        public int[] RandomizeFiveCategories();
         // Categories
         /// <summary>
         /// Get a list of all categories
@@ -48,13 +52,12 @@ namespace JeopardyWebAPI.Data.EFCore
         /// <returns></returns>
         Task<Questions> GetQuestionById(int id);
 
-        Task<Questions> GetQuestionByCategory(string category, int id);
-
         /// <summary>
-        /// Get question randomly
+        /// Get question by id
         /// </summary>
+        /// <param name="id"></param>
         /// <returns></returns>
-        Task<Questions> GetRandomQuestion();
+        Task<Questions[]> GetQuestionsByCategory(int id);
 
         /// <summary>
         /// Get a list of question by point value
