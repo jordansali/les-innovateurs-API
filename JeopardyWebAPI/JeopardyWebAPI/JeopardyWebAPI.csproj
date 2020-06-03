@@ -48,5 +48,9 @@
     <TypeScriptSourceRoot />
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>JeopardyWebAPI.xml</DocumentationFile>
+  </PropertyGroup>
+
 
 </Project>
