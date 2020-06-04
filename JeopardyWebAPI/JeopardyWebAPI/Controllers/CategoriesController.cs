@@ -181,10 +181,14 @@ namespace JeopardyWebAPI.Controllers
                 {
                     var cat = await _repository.GetCategoryById(id);
                     if (cat == null) return NotFound();
-                
-              //  var questions = await _repository.GetQuestionsByCategory();
 
-                    _repository.DeleteCategory(cat);
+                //prevent deletion of a question that has a category attached
+                if (model.Questions != null)
+                {
+                    return BadRequest("You can't delete a Question related to a Category");
+                }
+
+                _repository.DeleteCategory(cat);
 
                     if (await _repository.SaveChangesAsync())
                     {

@@ -20,6 +20,16 @@ namespace JeopardyWebAPI.Data.EFCore
         {
             return (await _context.SaveChangesAsync()) > 0;
         }
+        public bool CheckforDuplicates(int[] array)
+        {
+            var duplicates = array
+             .GroupBy(p => p)
+             .Where(g => g.Count() > 1)
+             .Select(g => g.Key);
+
+            return (duplicates.Count() > 0);
+        }
+
 
         // Categories
         public void AddCategory(Categories category)
@@ -33,15 +43,10 @@ namespace JeopardyWebAPI.Data.EFCore
         }
 
         public async Task<Categories[]> GetAllCategories()
-        {
-            
-           // IQueryable<Categories> query = _context.Categories;
-           
+        {                     
             var query = await _context.Categories.Include(q => q.Questions).ToArrayAsync();
 
-            return query;
-
-           
+            return query;           
         }
 
         public async Task<Categories> GetCategoryByCategoryNameEn(string nameEn)
@@ -74,8 +79,7 @@ namespace JeopardyWebAPI.Data.EFCore
         }
 
         public async Task<Questions[]> GetAllQuestions()
-        {
-           //IQueryable<Questions> query = _context.Questions;
+        {           
             var query = await _context.Questions.Include(c => c.Category).ToArrayAsync();
 
             return query;
@@ -83,20 +87,17 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions[]> GetQuestionsByCategory(int categoryId)
         {
-            var query = _context.Questions.ToArray();
-          //  Questions[] results = new Questions()[];
-            int points = 100;
+            //var query = _context.Questions.ToArray();          
 
-            for (int i=0; i<5; i++)
-            {
-               // results[i] = (Questions) query.Where(q => q.Points == points);
-                points += 100;
-            }
+            //query = query.Where(q => q.Category.Id == categoryId);
 
+            //return query;
 
-            //query = query.Where(q => q.Category.CategoryNameEn == nameEn);
+            IQueryable<Questions> query = _context.Questions;
 
-            return query;
+            query = query.Where(q => q.Category.Id == categoryId);
+
+            return await query.ToArrayAsync();
 
         }
 
@@ -110,7 +111,7 @@ namespace JeopardyWebAPI.Data.EFCore
 
             return q;
         }
-        //used to populate the game board
+        
         public async Task<Questions[]> GetQuestionsByPoints(int points)
         {
             IQueryable<Questions> query = _context.Questions;
@@ -121,11 +122,95 @@ namespace JeopardyWebAPI.Data.EFCore
         }
 
 
-      //  Task<Questions[]> GetBoard(){
-        
+
+        //public async Task<Categories[]> GetGameBoardCategories(int count)
+        //{
+        //    Categories[] categories = new Categories[count];
+
+        //    // 
+
+        //    return categories;
+        //}
+
+        public async Task<Questions[]> GetBoard()
+        {
+            Questions[] board = new Questions[25];
+            int[] categoryIds = GetRandomCategoryIds();            
+
+            // get random categories
+            for (int i = 0; i < 5; i++)
+            {
+                Questions[] questions = await GetRandomQuestionsByCategory(categoryIds[i]);
+
+                for (int j = 0; j < 5; j++) {
+                    // get question using category id              
+                    board[i * 5 + j] = questions[j];
+                }                                
+            }
+            return board;
+
+        }
+
+        public async Task<Questions[]> GetRandomQuestionsByCategory(int catId)
+        {
+            Questions[] questions = new Questions[5];
+            
+            for (int i = 0; i < 5; i++)
+            {      
+                //questions[i] = 
+                var x = await GetQuestionByCategoryAndPoints(catId, (i + 1) * 100);
+                questions[i] = x;
+            }
+
+            return questions;
+
+        }
+
+        private async Task<Questions> GetQuestionByCategoryAndPoints(int categoryId, int points)
+        {
+            try
+            {
+                Random rand = new Random();
+
+                // get question using category id and points value             
+                IQueryable<Questions> query = _context.Questions;
+
+                query = query.Where(q => q.Category.Id == categoryId);
+                query = query.Where(q => q.Points == points);
+
+                // randomize the results and get the first item 
+                var results = query.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
+
+                return results;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
 
 
-      //  }
+        public int[] GetRandomCategoryIds()
+        {
+            var rand = new Random();
+
+            // get all the categories
+            var query = _context.Categories.ToArray();
+
+            // array to store ids
+            int[] results = new int[5];
+
+            for(int i = 0; i < 5; i++)
+            {
+                // select one at random                
+                results[i] = query[rand.Next(query.Count())].Id;                
+
+            }
+            
+            return results;
+
+        }
+
 
 
         public int[] RandomizeFiveCategories()
@@ -161,18 +246,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         }
 
-        public bool CheckforDuplicates(int[] array)
-        {
-            var duplicates = array
-             .GroupBy(p => p)
-             .Where(g => g.Count() > 1)
-             .Select(g => g.Key);
-
-
-            return (duplicates.Count() > 0);
-
-
-
-        }
+        
     }
 }

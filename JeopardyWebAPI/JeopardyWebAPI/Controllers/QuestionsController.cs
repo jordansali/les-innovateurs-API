@@ -70,6 +70,7 @@ namespace JeopardyWebAPI.Controllers
             }
         }
 
+        
 
         [HttpPost]
         public async Task<ActionResult<QuestionsModel>> Post(QuestionsModel model)
@@ -178,12 +179,18 @@ namespace JeopardyWebAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<QuestionsModel>> Delete(int id)
+        public async Task<ActionResult<QuestionsModel>> Delete(int id, QuestionsModel model)
         {
             try
             {
                 var question = await _repository.GetQuestionById(id);
                 if (question == null) return NotFound();
+
+                //prevent deletion of a question that has a category attached
+                if (model.Category != null)
+                {
+                    return BadRequest("You can't delete a Question related to a Category");
+                }
 
                 _repository.DeleteQuestion(question);
 

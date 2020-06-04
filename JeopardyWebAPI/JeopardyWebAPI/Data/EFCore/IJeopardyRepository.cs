@@ -8,7 +8,7 @@ namespace JeopardyWebAPI.Data.EFCore
         // General 
         Task<bool> SaveChangesAsync();
 
-      //  Task<Questions[]> GetBoard();
+        Task<Questions[]> GetBoard();
 
 
         public int[] RandomizeFiveCategories();
