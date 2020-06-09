@@ -8,6 +8,8 @@ namespace JeopardyWebAPI.Models
         public string CategoryNameEn { get; set; }
         public string CategoryNameFr { get; set; }
 
+
         public ICollection<QuestionsModel> Questions { get; set; }
+
     }
 }

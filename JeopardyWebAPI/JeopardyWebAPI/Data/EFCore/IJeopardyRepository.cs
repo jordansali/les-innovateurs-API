@@ -1,4 +1,5 @@
 ﻿using JeopardyWebAPI.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace JeopardyWebAPI.Data.EFCore
@@ -10,8 +11,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         Task<Questions[]> GetBoard();
 
-
-        public int[] RandomizeFiveCategories();
         // Categories
         /// <summary>
         /// Get a list of all categories

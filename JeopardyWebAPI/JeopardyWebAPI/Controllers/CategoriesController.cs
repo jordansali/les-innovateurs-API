@@ -25,7 +25,6 @@ namespace JeopardyWebAPI.Controllers
                 _mapper = mapper;
             }
 
-/*
             [HttpGet]
             public async Task<ActionResult<CategoriesModel>> Get()
             {
@@ -45,7 +44,7 @@ namespace JeopardyWebAPI.Controllers
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, ex);
                 }
-            } */
+            } 
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoriesModel>> GetById(int id)
@@ -53,10 +52,7 @@ namespace JeopardyWebAPI.Controllers
             try
             {
                 var result = await _repository.GetCategoryById(id);
-                var mappedResult = _mapper.Map<CategoriesModel>(result);
-
-                //if id entered contains string
-            
+                var mappedResult = _mapper.Map<CategoriesModel>(result);      
 
                 //if category object does not exist, return this error
                 if (mappedResult == null)
@@ -72,19 +68,6 @@ namespace JeopardyWebAPI.Controllers
             }
         }
 
-        [HttpGet]
-        public int[] GetRandomFiveCategories()
-        {
-
-            var test = _repository.RandomizeFiveCategories();
-
-           var id = 0;
-
-            return test;
-
-
-        }
-
 
         [HttpPost]
             public async Task<ActionResult<CategoriesModel>> Post(CategoriesModel model)
@@ -96,7 +79,8 @@ namespace JeopardyWebAPI.Controllers
                     {
                     StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
                 }
-                if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) == null)
+                 //Return error if the name is null
+                if (model.CategoryNameEn == null)
                 {
                     BadRequest("Category Name cannot be empty");
                 }
@@ -155,8 +139,6 @@ namespace JeopardyWebAPI.Controllers
            
 
                 #endregion
-
-                //    _mapper.Map(catModel, cat);
 
                 if (await _repository.SaveChangesAsync())
                     {

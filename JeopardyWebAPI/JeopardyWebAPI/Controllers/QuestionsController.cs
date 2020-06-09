@@ -48,6 +48,27 @@ namespace JeopardyWebAPI.Controllers
             }
         }
 
+        [HttpGet("board")]
+        public async Task<ActionResult<QuestionsModel>> GetGameBoard(bool board=true)
+        {
+            try
+            {
+                var result = await _repository.GetBoard();
+                var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
+
+                if (mappedResult == null)
+                {
+                    return NotFound("No questions found");
+                }
+
+                return Ok(mappedResult);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
         [HttpGet("{points}")]
         public async Task<ActionResult<QuestionsModel>> GetByPoints(int points)
         {

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -79,7 +80,7 @@ namespace JeopardyWebAPI.Data.EFCore
         }
 
         public async Task<Questions[]> GetAllQuestions()
-        {           
+        {
             var query = await _context.Questions.Include(c => c.Category).ToArrayAsync();
 
             return query;
@@ -87,11 +88,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
         public async Task<Questions[]> GetQuestionsByCategory(int categoryId)
         {
-            //var query = _context.Questions.ToArray();          
-
-            //query = query.Where(q => q.Category.Id == categoryId);
-
-            //return query;
 
             IQueryable<Questions> query = _context.Questions;
 
@@ -116,22 +112,13 @@ namespace JeopardyWebAPI.Data.EFCore
         {
             IQueryable<Questions> query = _context.Questions;
 
-            query = query.Where(q => q.Points == points).Include(c => c.Category);
+            query = query.Where(q => q.Points == points).Include(c => c.Category)//.ThenInclude(x => x.CategoryNameEn);
 
             return await query.ToArrayAsync();
         }
 
 
-
-        //public async Task<Categories[]> GetGameBoardCategories(int count)
-        //{
-        //    Categories[] categories = new Categories[count];
-
-        //    // 
-
-        //    return categories;
-        //}
-
+        //get 25 questions for the Jeopardy game board
         public async Task<Questions[]> GetBoard()
         {
             Questions[] board = new Questions[25];
@@ -213,38 +200,6 @@ namespace JeopardyWebAPI.Data.EFCore
 
 
 
-        public int[] RandomizeFiveCategories()
-        {
-            var query = _context.Categories.ToArray();
-            int length = query.Length;
-
-           // var rnd = new Random();
-         //   query = query.OrderBy(x => rnd.Next()).Take(5);
-
-
-           // return query;
-
-            var random = new Random();
-            int [] result = new int[5];
-
-            int i = 0;
-            while(i<5)
-            {
-                result[i] = query[random.Next(0, length)].Id;
-                if (CheckforDuplicates(result))
-                {
-                    break;
-                }
-                else
-                {
-                    i++;
-                }
-                
-            }                          
-
-            return result; 
-
-        }
 
         
     }
