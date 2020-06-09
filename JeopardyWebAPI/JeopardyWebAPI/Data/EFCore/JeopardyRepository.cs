@@ -112,7 +112,8 @@ namespace JeopardyWebAPI.Data.EFCore
         {
             IQueryable<Questions> query = _context.Questions;
 
-            query = query.Where(q => q.Points == points).Include(c => c.Category)//.ThenInclude(x => x.CategoryNameEn);
+            query = query.Where(q => q.Points == points);
+       //     query = query.Where(q => q.Points == points).Include(c => c.Category)//.ThenInclude(x => x.CategoryNameEn);
 
             return await query.ToArrayAsync();
         }

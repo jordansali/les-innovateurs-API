@@ -104,26 +104,45 @@ namespace JeopardyWebAPI.Controllers
                     var category = await _repository.GetCategoryById(model.CategoryId);
                     if (category != null)
                     {
-
-                        //required to put question
-                        if(model.QuestionEn == null)
+                        var q = await _repository.GetQuestionById(model.Id);
+                        if (q == null)
                         {
-                            return BadRequest("Question English cannot be null");
+
+
+
+                            //required to put question
+                            if (model.QuestionEn == null)
+                            {
+                                return BadRequest("Question English cannot be null");
+                            }
+
+                            var question = _mapper.Map<Questions>(model);
+                            question.Category = category;
+
+                            _repository.AddQuestion(question);
+
+                            if (await _repository.SaveChangesAsync())
+                            {
+                                return CreatedAtRoute("",
+                                    new { category = category, id = question.Id },
+                                    _mapper.Map<QuestionsModel>(question));
+                            }
                         }
 
-                        var question = _mapper.Map<Questions>(model);
-                        question.Category = category;
-
-                        _repository.AddQuestion(question);                    
-
-                        if (await _repository.SaveChangesAsync())
-                        {
-                            return CreatedAtRoute("",
-                                new { category = category, id = question.Id },
-                                _mapper.Map<QuestionsModel>(question));
+                        else {
+                            return BadRequest("this question ID already exist");
+                        
                         }
+
+                    }
+
+              
+                    else {
+                        return BadRequest("Category doesn't exist");
+                    
                     }
                 }
+            
             }
             catch (Exception ex)
             {

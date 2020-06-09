@@ -77,24 +77,24 @@ namespace JeopardyWebAPI.Controllers
                 //Make sure to return an error if an existing Category Name is entered
                     if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
                     {
-                    StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
+                    return StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
                 }
                  //Return error if the name is null
                 if (model.CategoryNameEn == null)
                 {
-                    BadRequest("Category Name cannot be empty");
+                    return BadRequest("Category Name cannot be empty");
                 }
                 //Make sure to return error if an existing id is entered
                 if (await _repository.GetCategoryById(model.Id) != null)
                 {
-                
-                    StatusCode(StatusCodes.Status409Conflict, "This category already exists");
+
+                    return StatusCode(StatusCodes.Status409Conflict, "This category already exists");
                 }
-                //Return an error if user tries to create without an id
-                if (await _repository.GetCategoryById(model.Id) == null)
-                {
-                    BadRequest("Id must be entered.");
-                }
+                ////Return an error if user tries to create without an id
+                //if (await _repository.GetCategoryById(model.Id) == null)
+                //{
+                //    return BadRequest("Id must be entered.");
+                //}
 
                 if (ModelState.IsValid)
                     {
@@ -118,29 +118,37 @@ namespace JeopardyWebAPI.Controllers
 
             }
 
-            [HttpPut("{id:int}")]
-            public async Task<ActionResult<CategoriesModel>> Put(int id, CategoriesModel catModel)
+            [HttpPut]
+            public async Task<ActionResult<CategoriesModel>> Put(CategoriesModel catModel)
             {
-                try
+            try
+            {
+                if (catModel.Id == null || catModel.Id == 0)
                 {
-                    var cat = await _repository.GetCategoryById(id);
+                    return BadRequest("ID must be provided");
+
+                }
+                else
+                {
+
+                    var cat = await _repository.GetCategoryById(catModel.Id);
                     if (cat == null) return NotFound();
 
-                #region check properties null
+                    #region check properties null
 
-                if (catModel.CategoryNameEn != null)
-                {
-                    cat.CategoryNameEn = catModel.CategoryNameEn;
-                }
-                if (catModel.CategoryNameFr != null)
-                {
-                    cat.CategoryNameFr = catModel.CategoryNameFr;
-                }
-           
+                    if (catModel.CategoryNameEn != null)
+                    {
+                        cat.CategoryNameEn = catModel.CategoryNameEn;
+                    }
+                    if (catModel.CategoryNameFr != null)
+                    {
+                        cat.CategoryNameFr = catModel.CategoryNameFr;
+                    }
 
-                #endregion
 
-                if (await _repository.SaveChangesAsync())
+                    #endregion
+
+                    if (await _repository.SaveChangesAsync())
                     {
                         return Ok(_mapper.Map<CategoriesModel>(cat));
                     }
@@ -149,15 +157,16 @@ namespace JeopardyWebAPI.Controllers
                         return StatusCode(StatusCodes.Status500InternalServerError);
                     }
                 }
-                catch (Exception ex)
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError, ex);
-                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
 
             }
 
             [HttpDelete]
-            public async Task<ActionResult<CategoriesModel>> Delete(int id, CategoriesModel model)
+            public async Task<ActionResult<CategoriesModel>> Delete(int id)
             {
                 try
                 {
@@ -165,9 +174,9 @@ namespace JeopardyWebAPI.Controllers
                     if (cat == null) return NotFound();
 
                 //prevent deletion of a question that has a category attached
-                if (model.Questions != null)
+                if (cat.Questions.Count != 0)
                 {
-                    return BadRequest("You can't delete a Question related to a Category");
+                    return BadRequest("You can't delete a Category with Question");
                 }
 
                 _repository.DeleteCategory(cat);
