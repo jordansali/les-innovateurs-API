@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace JeopardyWebAPI.Models
 {
@@ -21,10 +22,8 @@ namespace JeopardyWebAPI.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                 optionsBuilder.UseMySql("server=feltgame.mariadb.database.azure.com;port=3306;user=mariadbadmin@feltgame;password=azuremariaDb!2020;database=feltgame", x => x.ServerVersion("10.2.31-mariadb"));
-                 //optionsBuilder.UseMySql(options.GetConnectionString("FeltGameContext"), x => x.ServerVersion("10.2.31-mariadb"));
+            {                 
+                 optionsBuilder.UseMySql(ConfigurationManager.ConnectionStrings["FeltGameContext"].ConnectionString);
             }
         }
 
@@ -54,40 +53,7 @@ namespace JeopardyWebAPI.Models
                     .HasColumnType("varchar(50)")
                     .HasCharSet("latin1")
                     .HasCollation("latin1_swedish_ci");
-            });
-
-            modelBuilder.Entity<Players>(entity =>
-            {
-                entity.ToTable("players");
-
-                entity.HasIndex(e => e.EmailAddress)
-                    .HasName("FJ_UniqueEmail")
-                    .IsUnique();
-
-                entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.EmailAddress)
-                    .HasColumnName("emailAddress")
-                    .HasColumnType("varchar(50)")
-                    .HasCharSet("latin1")
-                    .HasCollation("latin1_swedish_ci");
-
-                entity.Property(e => e.Name)
-                    .HasColumnName("name")
-                    .HasColumnType("varchar(30)")
-                    .HasCharSet("latin1")
-                    .HasCollation("latin1_swedish_ci");
-
-                entity.Property(e => e.Ranking)
-                    .HasColumnName("ranking")
-                    .HasColumnType("int(11)");
-
-                entity.Property(e => e.Score)
-                    .HasColumnName("score")
-                    .HasColumnType("int(11)");
-            });
+            });            
 
             modelBuilder.Entity<Questions>(entity =>
             {
@@ -147,6 +113,39 @@ namespace JeopardyWebAPI.Models
                     .WithMany(p => p.Questions)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("questions_ibfk_1");
+            });
+
+            modelBuilder.Entity<Players>(entity =>
+            {
+                entity.ToTable("players");
+
+                entity.HasIndex(e => e.EmailAddress)
+                    .HasName("FJ_UniqueEmail")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnName("id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.EmailAddress)
+                    .HasColumnName("emailAddress")
+                    .HasColumnType("varchar(50)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Name)
+                    .HasColumnName("name")
+                    .HasColumnType("varchar(30)")
+                    .HasCharSet("latin1")
+                    .HasCollation("latin1_swedish_ci");
+
+                entity.Property(e => e.Ranking)
+                    .HasColumnName("ranking")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Score)
+                    .HasColumnName("score")
+                    .HasColumnType("int(11)");
             });
 
             OnModelCreatingPartial(modelBuilder);

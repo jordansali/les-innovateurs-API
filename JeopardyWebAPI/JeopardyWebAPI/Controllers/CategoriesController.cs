@@ -15,36 +15,35 @@ namespace JeopardyWebAPI.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly IJeopardyRepository _repository;
+        private readonly IMapper _mapper;
 
-            private readonly IJeopardyRepository _repository;
-            private readonly IMapper _mapper;
+        public CategoriesController(IJeopardyRepository repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
 
-            public CategoriesController(IJeopardyRepository repository, IMapper mapper)
+        [HttpGet]
+        public async Task<ActionResult<CategoriesModel>> Get()
+        {
+            try
             {
-                _repository = repository;
-                _mapper = mapper;
+                var result = await _repository.GetAllCategories();
+                var mappedResult = _mapper.Map<IEnumerable<CategoriesModel>>(result);
+
+            //if no categories exist in the database
+            if (mappedResult == null)
+            {
+                return NotFound("Categories not found");
             }
-
-            [HttpGet]
-            public async Task<ActionResult<CategoriesModel>> Get()
+            return Ok(mappedResult);
+            }
+            catch (Exception ex)
             {
-                try
-                {
-                    var result = await _repository.GetAllCategories();
-                    var mappedResult = _mapper.Map<IEnumerable<CategoriesModel>>(result);
-
-                //if no categories exist in the database
-                if (mappedResult == null)
-                {
-                    return NotFound("Categories not found");
-                }
-                return Ok(mappedResult);
-                }
-                catch (Exception ex)
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError, ex);
-                }
-            } 
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        } 
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoriesModel>> GetById(int id)
@@ -68,74 +67,66 @@ namespace JeopardyWebAPI.Controllers
             }
         }
 
-
         [HttpPost]
-            public async Task<ActionResult<CategoriesModel>> Post(CategoriesModel model)
-            {
-                try
-                {
-                //Make sure to return an error if an existing Category Name is entered
-                    if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
-                    {
-                    return StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
-                }
-                 //Return error if the name is null
-                if (model.CategoryNameEn == null)
-                {
-                    return BadRequest("Category Name cannot be empty");
-                }
-                //Make sure to return error if an existing id is entered
-                if (await _repository.GetCategoryById(model.Id) != null)
-                {
-
-                    return StatusCode(StatusCodes.Status409Conflict, "This category already exists");
-                }
-                ////Return an error if user tries to create without an id
-                //if (await _repository.GetCategoryById(model.Id) == null)
-                //{
-                //    return BadRequest("Id must be entered.");
-                //}
-
-                if (ModelState.IsValid)
-                    {
-                        var cat = _mapper.Map<Categories>(model);
-
-                        _repository.AddCategory(cat);
-
-                        if (await _repository.SaveChangesAsync())
-                        {
-                            var newModel = _mapper.Map<CategoriesModel>(cat);
-
-                            return CreatedAtRoute("", new { cat = newModel.CategoryNameEn }, newModel);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError, ex);
-                }
-                return BadRequest(ModelState);
-
-            }
-
-            [HttpPut]
-            public async Task<ActionResult<CategoriesModel>> Put(CategoriesModel catModel)
-            {
+        public async Task<ActionResult<CategoriesModel>> Post(CategoriesModel model)
+        {
             try
             {
-                if (catModel.Id == null || catModel.Id == 0)
+            //Make sure to return an error if an existing Category Name is entered
+                if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
+                {
+                return StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
+            }
+                 
+            //Return error if the name is null
+            if (model.CategoryNameEn == null)
+            {
+                return BadRequest("Category Name cannot be empty");
+            }
+
+            //Make sure to return error if an existing id is entered
+            if (await _repository.GetCategoryById(model.Id) != null)
+            {
+
+                return StatusCode(StatusCodes.Status409Conflict, "This category already exists");
+            }
+
+            if (ModelState.IsValid)
+                {
+                    var cat = _mapper.Map<Categories>(model);
+
+                    _repository.AddCategory(cat);
+
+                    if (await _repository.SaveChangesAsync())
+                    {
+                        var newModel = _mapper.Map<CategoriesModel>(cat);
+
+                        return CreatedAtRoute("", new { cat = newModel.CategoryNameEn }, newModel);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<CategoriesModel>> Put(CategoriesModel catModel)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(catModel.Id.ToString()) || catModel.Id == 0)
                 {
                     return BadRequest("ID must be provided");
-
                 }
                 else
                 {
-
                     var cat = await _repository.GetCategoryById(catModel.Id);
                     if (cat == null) return NotFound();
 
-                    #region check properties null
-
+                    #region Null check Categories properties
                     if (catModel.CategoryNameEn != null)
                     {
                         cat.CategoryNameEn = catModel.CategoryNameEn;
@@ -144,8 +135,6 @@ namespace JeopardyWebAPI.Controllers
                     {
                         cat.CategoryNameFr = catModel.CategoryNameFr;
                     }
-
-
                     #endregion
 
                     if (await _repository.SaveChangesAsync())
@@ -162,16 +151,15 @@ namespace JeopardyWebAPI.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
+        }
 
-            }
-
-            [HttpDelete]
-            public async Task<ActionResult<CategoriesModel>> Delete(int id)
+        [HttpDelete]
+        public async Task<ActionResult<CategoriesModel>> Delete(int id)
+        {
+            try
             {
-                try
-                {
-                    var cat = await _repository.GetCategoryById(id);
-                    if (cat == null) return NotFound();
+                var cat = await _repository.GetCategoryById(id);
+                if (cat == null) return NotFound();
 
                 //prevent deletion of a question that has a category attached
                 if (cat.Questions.Count != 0)
@@ -181,22 +169,20 @@ namespace JeopardyWebAPI.Controllers
 
                 _repository.DeleteCategory(cat);
 
-                    if (await _repository.SaveChangesAsync())
-                    {
-                        return Ok();
-                    }
-                    else
-                    {
-                        return StatusCode(StatusCodes.Status500InternalServerError);
-                    }
-
-                }
-                catch (Exception ex)
+                if (await _repository.SaveChangesAsync())
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, ex);
+                    return Ok();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError);
                 }
             }
-
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
     }
+}
 

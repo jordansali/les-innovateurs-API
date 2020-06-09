@@ -21,6 +21,7 @@ namespace JeopardyWebAPI.Data.EFCore
         {
             return (await _context.SaveChangesAsync()) > 0;
         }
+        
         public bool CheckforDuplicates(int[] array)
         {
             var duplicates = array
@@ -28,7 +29,31 @@ namespace JeopardyWebAPI.Data.EFCore
              .Where(g => g.Count() > 1)
              .Select(g => g.Key);
 
-            return (duplicates.Count() > 0);
+            return duplicates.Any();
+        }
+
+        /// <summary>
+        /// Gets 25 random Questions used to populate the Jeopardy game.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<Questions[]> GetBoard()
+        {
+            Questions[] board = new Questions[25];
+            int[] categoryIds = GetRandomCategoryIds();
+
+            // get random categories
+            for (int i = 0; i < 5; i++)
+            {
+                Questions[] questions = await GetRandomQuestionsByCategory(categoryIds[i]);
+
+                for (int j = 0; j < 5; j++)
+                {
+                    // get question using category id              
+                    board[i * 5 + j] = questions[j];
+                }
+            }
+
+            return board;
         }
 
 
@@ -68,6 +93,32 @@ namespace JeopardyWebAPI.Data.EFCore
             return await query.FirstOrDefaultAsync();
         }
 
+        public int[] GetRandomCategoryIds()
+        {
+            try
+            {
+                var rand = new Random();
+
+                // get all the categories
+                var query = _context.Categories.ToArray();
+
+                // array to store ids
+                int[] results = new int[5];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    // select one at random                
+                    results[i] = query[rand.Next(query.Count())].Id;
+                }
+
+                return results;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         // Questions        
         public void AddQuestion(Questions question)
         {
@@ -86,15 +137,14 @@ namespace JeopardyWebAPI.Data.EFCore
             return query;
         }
 
-        public async Task<Questions[]> GetQuestionsByCategory(int categoryId)
+        public async Task<Questions[]> GetQuestionsByCategory(int id)
         {
 
             IQueryable<Questions> query = _context.Questions;
 
-            query = query.Where(q => q.Category.Id == categoryId);
+            query = query.Where(q => q.Category.Id == id);
 
             return await query.ToArrayAsync();
-
         }
 
         public async Task<Questions> GetQuestionById(int id)
@@ -112,33 +162,12 @@ namespace JeopardyWebAPI.Data.EFCore
         {
             IQueryable<Questions> query = _context.Questions;
 
-            query = query.Where(q => q.Points == points);
-       //     query = query.Where(q => q.Points == points).Include(c => c.Category)//.ThenInclude(x => x.CategoryNameEn);
+            //query = query.Where(q => q.Points == points);
+            query = query.Where(q => q.Points == points).Include(c => c.Category).ThenInclude(x => x.CategoryNameEn);
 
             return await query.ToArrayAsync();
         }
-
-
-        //get 25 questions for the Jeopardy game board
-        public async Task<Questions[]> GetBoard()
-        {
-            Questions[] board = new Questions[25];
-            int[] categoryIds = GetRandomCategoryIds();            
-
-            // get random categories
-            for (int i = 0; i < 5; i++)
-            {
-                Questions[] questions = await GetRandomQuestionsByCategory(categoryIds[i]);
-
-                for (int j = 0; j < 5; j++) {
-                    // get question using category id              
-                    board[i * 5 + j] = questions[j];
-                }                                
-            }
-            return board;
-
-        }
-
+                
         public async Task<Questions[]> GetRandomQuestionsByCategory(int catId)
         {
             Questions[] questions = new Questions[5];
@@ -151,56 +180,30 @@ namespace JeopardyWebAPI.Data.EFCore
             }
 
             return questions;
-
         }
 
         private async Task<Questions> GetQuestionByCategoryAndPoints(int categoryId, int points)
         {
             try
             {
-                Random rand = new Random();
-
                 // get question using category id and points value             
                 IQueryable<Questions> query = _context.Questions;
 
                 query = query.Where(q => q.Category.Id == categoryId);
                 query = query.Where(q => q.Points == points);
 
+                await query.ToListAsync();
+
                 // randomize the results and get the first item 
                 var results = query.OrderBy(x => Guid.NewGuid()).FirstOrDefault();
 
                 return results;
             }
-            catch(Exception ex)
+            catch
             {
                 return null;
             }
         }
-
-
-        public int[] GetRandomCategoryIds()
-        {
-            var rand = new Random();
-
-            // get all the categories
-            var query = _context.Categories.ToArray();
-
-            // array to store ids
-            int[] results = new int[5];
-
-            for(int i = 0; i < 5; i++)
-            {
-                // select one at random                
-                results[i] = query[rand.Next(query.Count())].Id;                
-
-            }
-            
-            return results;
-
-        }
-
-
-
 
         
     }

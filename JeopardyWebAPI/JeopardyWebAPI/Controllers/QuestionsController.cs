@@ -15,8 +15,6 @@ namespace JeopardyWebAPI.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-
-
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
 
@@ -25,7 +23,6 @@ namespace JeopardyWebAPI.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-
 
         [HttpGet]
         public async Task<ActionResult<QuestionsModel>> Get()
@@ -49,7 +46,7 @@ namespace JeopardyWebAPI.Controllers
         }
 
         [HttpGet("board")]
-        public async Task<ActionResult<QuestionsModel>> GetGameBoard(bool board=true)
+        public async Task<ActionResult<QuestionsModel>> GetGameBoard()
         {
             try
             {
@@ -90,9 +87,7 @@ namespace JeopardyWebAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
-
-        
-
+       
         [HttpPost]
         public async Task<ActionResult<QuestionsModel>> Post(QuestionsModel model)
         {
@@ -107,9 +102,6 @@ namespace JeopardyWebAPI.Controllers
                         var q = await _repository.GetQuestionById(model.Id);
                         if (q == null)
                         {
-
-
-
                             //required to put question
                             if (model.QuestionEn == null)
                             {
@@ -128,15 +120,11 @@ namespace JeopardyWebAPI.Controllers
                                     _mapper.Map<QuestionsModel>(question));
                             }
                         }
-
                         else {
                             return BadRequest("this question ID already exist");
                         
                         }
-
-                    }
-
-              
+                    }              
                     else {
                         return BadRequest("Category doesn't exist");
                     
@@ -160,10 +148,8 @@ namespace JeopardyWebAPI.Controllers
                 {
                     var question = await _repository.GetQuestionById(id);
                     if (question == null) return NotFound();
-
                
-
-                    #region properties check null
+                    #region Null check for Questions properties
                     if (model.QuestionEn != null)
                     {
                         question.QuestionEn = model.QuestionEn;
@@ -197,7 +183,6 @@ namespace JeopardyWebAPI.Controllers
                     }
 
                     #endregion
-
 
                     if (question.CategoryId != model.CategoryId)
                     {
@@ -242,7 +227,6 @@ namespace JeopardyWebAPI.Controllers
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
-
             }
             catch (Exception ex)
             {

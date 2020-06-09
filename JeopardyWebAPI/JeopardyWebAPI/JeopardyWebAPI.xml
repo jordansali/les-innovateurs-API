@@ -64,5 +64,11 @@
             Delete a question
             </summary>
         </member>
+        <member name="M:JeopardyWebAPI.Data.EFCore.JeopardyRepository.GetBoard">
+            <summary>
+            Gets 25 random Questions used to populate the Jeopardy game.
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
