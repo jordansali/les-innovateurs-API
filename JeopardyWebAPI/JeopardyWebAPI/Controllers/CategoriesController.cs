@@ -59,6 +59,8 @@ namespace JeopardyWebAPI.Controllers
                     return NotFound("Category does not exist");
                 }
 
+                //TO DO: BAD REQUEST
+
                 return Ok(mappedResult);
             }
             catch (Exception ex)
@@ -75,7 +77,7 @@ namespace JeopardyWebAPI.Controllers
             //Make sure to return an error if an existing Category Name is entered
                 if (await _repository.GetCategoryByCategoryNameEn(model.CategoryNameEn) != null)
                 {
-                return StatusCode(StatusCodes.Status409Conflict, "The category name already exists");
+                return StatusCode(StatusCodes.Status409Conflict, "The category already exists");
             }
                  
             //Return error if the name is null
@@ -88,7 +90,7 @@ namespace JeopardyWebAPI.Controllers
             if (await _repository.GetCategoryById(model.Id) != null)
             {
 
-                return StatusCode(StatusCodes.Status409Conflict, "This category already exists");
+                return StatusCode(StatusCodes.Status409Conflict, "The category already exists");
             }
 
             if (ModelState.IsValid)
@@ -171,7 +173,7 @@ namespace JeopardyWebAPI.Controllers
 
                 if (await _repository.SaveChangesAsync())
                 {
-                    return Ok();
+                    return NoContent();
                 }
                 else
                 {

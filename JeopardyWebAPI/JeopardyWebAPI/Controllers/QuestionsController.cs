@@ -80,6 +80,8 @@ namespace JeopardyWebAPI.Controllers
                     return NotFound("No questions found");
                 }
 
+                //TO DO: Bad Request
+
                 return Ok(mappedResult);
             }
             catch (Exception ex)
@@ -121,7 +123,7 @@ namespace JeopardyWebAPI.Controllers
                             }
                         }
                         else {
-                            return BadRequest("this question ID already exist");
+                            return BadRequest("this question ID already exist"); //Conflict instead of bad request
                         
                         }
                     }              
@@ -214,14 +216,14 @@ namespace JeopardyWebAPI.Controllers
                 //prevent deletion of a question that has a category attached
                 if (model.Category != null)
                 {
-                    return BadRequest("You can't delete a Question related to a Category");
+                    return BadRequest("Not allowed or request not accepted");
                 }
 
                 _repository.DeleteQuestion(question);
 
                 if (await _repository.SaveChangesAsync())
                 {
-                    return Ok();
+                    return NoContent();
                 }
                 else
                 {
