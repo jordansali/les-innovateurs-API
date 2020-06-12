@@ -80,7 +80,11 @@ namespace JeopardyWebAPI.Controllers
                     return NotFound("No questions found");
                 }
 
-                //TO DO: Bad Request
+                //BAD REQUEST Note: Not sure if works or not
+                if (string.IsNullOrEmpty(points.ToString()) || points == 0)
+                {
+                    return BadRequest();
+                }
 
                 return Ok(mappedResult);
             }
@@ -123,8 +127,8 @@ namespace JeopardyWebAPI.Controllers
                             }
                         }
                         else {
-                            return BadRequest("this question ID already exist"); //Conflict instead of bad request
-                        
+                            return StatusCode(StatusCodes.Status409Conflict, "The question already exists");
+
                         }
                     }              
                     else {

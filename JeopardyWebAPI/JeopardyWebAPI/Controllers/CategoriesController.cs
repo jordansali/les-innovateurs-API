@@ -59,7 +59,11 @@ namespace JeopardyWebAPI.Controllers
                     return NotFound("Category does not exist");
                 }
 
-                //TO DO: BAD REQUEST
+                //BAD REQUEST Note: Not sure if works or not
+                if (string.IsNullOrEmpty(id.ToString()) || id == 0)
+                {
+                    return BadRequest();
+                }
 
                 return Ok(mappedResult);
             }
