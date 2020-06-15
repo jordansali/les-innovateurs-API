@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxCxfeN1HD06FYCz6gs00wwAAAAACAAAAAAAQZgAAAAEAACAAAAC97O9fDsbGttszUXdqHtmL8CKRxkpz5b0ko5heruamngAAAAAOgAAAAAIAACAAAAAuyzoQxflIUs3k95Guo5c3PmNd3TMgkgU0e7aV4Sy/LIAAAADxCwCBYLXToKG+qUZ7VVSZRbFg7GCpIIUnNn4dd9jOkgN/5e8OQncF5ATQipCr+YkefWe/96q5ZDX2nyApP3n5fEfFkb9bUm23lgu7r2BQAddrcdru29yIX2AJWcQUugD8D+4mb1rduhzxdoiKfkobykQgcEtyDS8DSTcV5J8UwUAAAAAriDOI0z4OfegP6SUg23Y5cwDz3rVoczwVn+qsaG2mgnSvcdVa/fafewCGIcEFbfkcJ0+Dv7jZSMuWxPktJbTG</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="FeltGameContext">
+      <Value>server=feltgame.mariadb.database.azure.com%3bport=3306%3buser=mariadbadmin%40feltgame%3bpassword=azuremariaDb!2020%3bdatabase=feltgame%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

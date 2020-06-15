@@ -23,3 +23,17 @@ JeopardyWebApp/.vs/JeopardyWebApp/v16/.suo
 JeopardyWebApp\.vs\
 /.vs/les-innovateurs-API6/v16/.suo
 /.vs
+
+JeopardyWebAPI/obj/*
+JeopardyWebAPI/bin/
+JeopardyWebAPI/JeopardyWebAPI/bin/
+JeopardyWebAPI/JeopardyWebAPI/logs/
+JeopardyWebAPI/.vs/
+JeopardyWebAPI/JeopardyWebAPI/obj/
+JeopardyWebAPI/JeopardyWebAPI/obj/Debug/netcoreapp3.1/CategoriesAPI.assets.cache
+JeopardyWebAPI/JeopardyWebAPI/obj/Debug/netcoreapp3.1/CategoriesAPI.csprojAssemblyReference.cache
+JeopardyWebAPI/.vs/JeopardyWebAPI/v16/.suo
+JeopardyWebAPI\.vs\
+/.vs/les-innovateurs-API6/v16/.suo
+/.vs
+JeopardyWebApp/wwwroot/

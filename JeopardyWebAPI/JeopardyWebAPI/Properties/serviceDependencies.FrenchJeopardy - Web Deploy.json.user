@@ -1,0 +1,13 @@
+{
+  "dependencies": {},
+  "parameters": {
+    "resourceGroup": {
+      "Type": "resourceGroup",
+      "Value": "FELTgame"
+    },
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "9af2de13-5137-48be-a1fa-d37fd208a4d0"
+    }
+  }
+}
