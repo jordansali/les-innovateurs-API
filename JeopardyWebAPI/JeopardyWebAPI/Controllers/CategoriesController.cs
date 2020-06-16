@@ -18,6 +18,7 @@ namespace JeopardyWebAPI.Controllers
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
 
+
         public CategoriesController(IJeopardyRepository repository, IMapper mapper)
         {
             _repository = repository;

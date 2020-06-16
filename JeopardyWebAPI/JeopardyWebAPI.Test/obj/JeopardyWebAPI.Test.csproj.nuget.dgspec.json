@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj": {}
+    "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj": {
+    "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj",
+        "projectUniqueName": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj",
         "projectName": "JeopardyWebAPI.Test",
-        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj",
-        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI.Test\\obj\\",
+        "projectPath": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI.Test\\JeopardyWebAPI.Test.csproj",
+        "packagesPath": "C:\\Users\\selin\\.nuget\\packages\\",
+        "outputPath": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\selin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj": {
-                "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj"
+              "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj": {
+                "projectPath": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj"
               }
             }
           }
@@ -42,15 +42,31 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.5.0, )"
+              "version": "[16.6.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
               "version": "[1.2.0, )"
             },
             "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.extensibility.execution": {
               "target": "Package",
               "version": "[2.4.1, )"
             },
@@ -77,21 +93,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj": {
+    "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj",
+        "projectUniqueName": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj",
         "projectName": "JeopardyWebAPI",
-        "projectPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj",
-        "packagesPath": "C:\\Users\\Shani\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shani\\source\\repos\\les-innovateurs-API\\JeopardyWebAPI\\JeopardyWebAPI\\obj\\",
+        "projectPath": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\JeopardyWebAPI.csproj",
+        "packagesPath": "C:\\Users\\selin\\.nuget\\packages\\",
+        "outputPath": "H:\\Source\\Repos\\JeopardyWebApp\\JeopardyWebAPI\\JeopardyWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\selin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -194,7 +210,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
