@@ -35,6 +35,10 @@ namespace JeopardyWebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            if(env.IsProduction() || env.IsStaging() || env.IsEnvironment("Staging") || env.IsEnvironment("Production"))
+            {
+                app.UseExceptionHandler();
+            }
 
             app.UseHttpsRedirection();
 
