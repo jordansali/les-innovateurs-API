@@ -1,4 +1,0 @@
-C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI.Test\obj\Debug\netcoreapp3.1\JeopardyWebAPI.Test.csprojAssemblyReference.cache
-C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI.Test\obj\Debug\netcoreapp3.1\JeopardyWebAPI.Test.AssemblyInfoInputs.cache
-C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI.Test\obj\Debug\netcoreapp3.1\JeopardyWebAPI.Test.AssemblyInfo.cs
-C:\Users\Shani\source\repos\les-innovateurs-API\JeopardyWebAPI\JeopardyWebAPI.Test\obj\Debug\netcoreapp3.1\JeopardyWebAPI.Test.csproj.CoreCompileInputs.cache
