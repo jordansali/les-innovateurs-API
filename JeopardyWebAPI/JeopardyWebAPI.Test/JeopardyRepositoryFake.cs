@@ -14,10 +14,12 @@ namespace JeopardyWebAPI.Test
         private readonly List<Categories> _category;
         private readonly List<Questions> _questions;
         private readonly JeopardyDbContext _context;
+        readonly JeopardyRepositoryFake repositoryFake;
 
 
         public JeopardyRepositoryFake() {
 
+            
             _category = new List<Categories>()
             {
                 new Categories() {Id = 30, CategoryNameEn = "TestCat 1", CategoryNameFr = "TestCat 1 en francais"},
@@ -38,28 +40,6 @@ namespace JeopardyWebAPI.Test
 
         }
 
-        //public JeopardyRepositoryFake(JeopardyDbContext context)
-        //{
-        //    _context = context;
-
-        //    _category = new List<Categories>()
-        //    {
-        //        new Categories() {Id = 30, CategoryNameEn = "TestCat 1", CategoryNameFr = "TestCat 1 en francais"},
-        //        new Categories() {Id = 31, CategoryNameEn = "TestCat 2", CategoryNameFr = "TestCat 2 en francais"},
-        //        new Categories() {Id = 32, CategoryNameEn = "TestCat 3", CategoryNameFr = "TestCat 3 en francais"},
-        //        new Categories() {Id = 33, CategoryNameEn = "TestCat 4", CategoryNameFr = "TestCat 4 en francais"},
-        //        new Categories() {Id = 34, CategoryNameEn = "TestCat 5", CategoryNameFr = "TestCat 5 en francais"},
-        //    };
-
-        //    _questions = new List<Questions>()
-        //    {
-        //        new Questions() {Id = 30, QuestionEn = "TestQuestion 1", QuestionFr = "TestQuestion 1 en francais", AnswerEn = "TestAnswer 1", AnswerFr = "TestAnswer 1 en francais", CategoryId = 12, Hint = "Test Hint 1", Points = 100, TimeLimit = 30},
-        //        new Questions() {Id = 31, QuestionEn = "TestQuestion 2", QuestionFr = "TestQuestion 2 en francais", AnswerEn = "TestAnswer 2", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
-        //        new Questions() {Id = 32, QuestionEn = "TestQuestion 3", QuestionFr = "TestQuestion 3 en francais", AnswerEn = "TestAnswer 3", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
-        //        new Questions() {Id = 33, QuestionEn = "TestQuestion 4", QuestionFr = "TestQuestion 4 en francais", AnswerEn = "TestAnswer 4", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
-        //        new Questions() {Id = 34, QuestionEn = "TestQuestion 5", QuestionFr = "TestQuestion 5 en francais", AnswerEn = "TestAnswer 5", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30}
-        //    };
-        //}
 
         public void AddCategory(Categories category)
         {

@@ -30,7 +30,7 @@ namespace JeopardyWebAPI.Controllers
         {
             try
             {
-                var result = await _repository.GetAllCategories();
+                var result = await _repository.GetAllCategories(); 
                 var mappedResult = _mapper.Map<IEnumerable<CategoriesModel>>(result);
 
             //if no categories exist in the database
