@@ -7,7 +7,8 @@ using JeopardyWebAPI.Data.EFCore;
 using Microsoft.AspNetCore.Mvc;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using AutoMapper;
-using JeopardyWebAPI;
+using JeopardyWebAPI.Models;
+using JeopardyWebAPI.Data;
 
 namespace JeopardyWebAPI.Test
 {
