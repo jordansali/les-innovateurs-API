@@ -1,5 +1,6 @@
 ﻿using JeopardyWebAPI.Data.EFCore;
 using JeopardyWebAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,15 +12,25 @@ namespace JeopardyWebAPI.Test
 {
     public class JeopardyRepositoryFake : IJeopardyRepository
     {
-        private readonly List<Categories> _category;
-        private readonly List<Questions> _questions;
+        private List<Categories> _category;
+        private List<Questions> _questions;
         private readonly JeopardyDbContext _context;
         readonly JeopardyRepositoryFake repositoryFake;
 
 
         public JeopardyRepositoryFake() {
 
-            
+                
+
+        }
+
+        private JeopardyDbContext GetContextWithData()
+        {
+            var options = new DbContextOptionsBuilder<JeopardyDbContext>()
+                     .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                     .Options;
+            var context = new JeopardyDbContext(options);
+
             _category = new List<Categories>()
             {
                 new Categories() {Id = 30, CategoryNameEn = "TestCat 1", CategoryNameFr = "TestCat 1 en francais"},
@@ -38,6 +49,7 @@ namespace JeopardyWebAPI.Test
                 new Questions() {Id = 34, QuestionEn = "TestQuestion 5", QuestionFr = "TestQuestion 5 en francais", AnswerEn = "TestAnswer 5", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30}
             };
 
+            return context;
         }
 
 
