@@ -15,9 +15,10 @@ namespace JeopardyWebAPI.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        #region Member variables
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
-
+        #endregion
 
         public CategoriesController(IJeopardyRepository repository, IMapper mapper)
         {

@@ -16,13 +16,14 @@ namespace JeopardyWebAPI.Test
     [TestClass]
     public class TestQuestionsController
     {
-
+        #region Member variables
         readonly QuestionsController _controller;
         private readonly JeopardyDbContext testContext;
         readonly IJeopardyRepository _service;
         readonly IMapper _mapper;
         readonly QuestionsModel model;
         readonly QuestionsModel updateModel;
+        #endregion
 
         public TestQuestionsController()
         {
@@ -32,7 +33,7 @@ namespace JeopardyWebAPI.Test
                 cfg.AddProfile(new JeopardyMappingProfile());
             });
 
-            model = new QuestionsModel() { Id = 45, QuestionEn = "TestQuestion 1", QuestionFr = "TestQuestion 1 en francais", AnswerEn = "TestAnswer 1", AnswerFr = "TestAnswer 1 en francais", CategoryId = 30, Hint = "Test Hint 1", Points = 100, TimeLimit = 30 };
+            model = new QuestionsModel() { Id = 55, QuestionEn = "TestQuestion 1", QuestionFr = "TestQuestion 1 en francais", AnswerEn = "TestAnswer 1", AnswerFr = "TestAnswer 1 en francais", CategoryId = 30, Hint = "Test Hint 1", Points = 100, TimeLimit = 30 };
 
             updateModel = new QuestionsModel() { Id = 32, QuestionEn = "TestQuestion 112434", QuestionFr = "TestQuestion 112434 en francais", AnswerEn = "TestAnswer 1", AnswerFr = "TestAnswer 1 en francais", CategoryId = 30, Hint = "Test Hint 1", Points = 100, TimeLimit = 30 };
 
@@ -54,7 +55,7 @@ namespace JeopardyWebAPI.Test
 
             // Assert
             var items = Xunit.Assert.IsType<List<QuestionsModel>>(okObjectResults.Value);
-            Assert.AreEqual(5, items.Count);
+            Assert.AreEqual(25, items.Count);
             Assert.IsNotNull(okResult);
         }
 
@@ -92,8 +93,8 @@ namespace JeopardyWebAPI.Test
 
             Xunit.Assert.IsType<BadRequestObjectResult>(okRouteResult);
             Xunit.Assert.NotNull(okRouteResult);
-        }
-
+        }                
+        
         [Fact]
         public async void PutCategory_UpdatesCategory()
         {
@@ -117,5 +118,48 @@ namespace JeopardyWebAPI.Test
             Xunit.Assert.IsType<NoContentResult>(okRouteResult);
         }
 
+        [Fact]
+        public async void GetBoardQuestions_ShouldReturnTwentyFiveQuestions()
+        {
+            // Act
+            var okResult = await _controller.Get();
+            var okObjectResults = okResult.Result as OkObjectResult;
+
+            // Assert
+            var items = Xunit.Assert.IsType<List<QuestionsModel>>(okObjectResults.Value);
+            Assert.AreEqual(25, items.Count);
+            Assert.IsNotNull(okResult);
+        }
+
+        /* Unit test methods to create:         
+         * post questions without English name
+         * post questions without Category
+         * Post questions with non-existent category
+         * delete quetsions that doesn't exist
+         * post question that already exists
+         * put update for question that doesn't exist
+         * No questions exist
+         * get board with fewer than 25 questions in db -> non-issue for now, will always return 25 unless db empty
+         */
+
+        [Fact]
+        public async void GetAllQuestionsWhenNoneExist_ShouldReturnNotFound()
+        {
+            // TODO
+        }
+
+        [Fact]
+        public async void GetPointsThatDoesntExist_ShouldReturnNotFound()
+        {
+            int badPoints = 600;
+
+            // Act
+            var okResult = await _controller.GetByPoints(badPoints);
+            var okObjectResults = okResult.Result as BadRequestObjectResult;
+
+            // Assert            
+            Xunit.Assert.IsType<BadRequestObjectResult>(okObjectResults);
+            Assert.IsNotNull(okResult);
+        }
     }
 }
