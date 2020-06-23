@@ -210,18 +210,12 @@ namespace JeopardyWebAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<QuestionsModel>> Delete(int id, QuestionsModel model)
+        public async Task<ActionResult<QuestionsModel>> Delete(int id)
         {
             try
             {
                 var question = await _repository.GetQuestionById(id);
-                if (question == null) return NotFound();
-
-                //prevent deletion of a question that has a category attached
-                if (model.Category != null)
-                {
-                    return BadRequest("Not allowed or request not accepted");
-                }
+                if (question == null) return NotFound();                
 
                 _repository.DeleteQuestion(question);
 
