@@ -39,4 +39,4 @@ steps:
     azureSubscription: 'Jordan''s Subscription'
     appType: 'webApp'
     WebAppName: 'JeopardyApiPipeline'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(build.artifactStagingDirectory)\*.zip'
