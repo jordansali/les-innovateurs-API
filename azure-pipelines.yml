@@ -17,10 +17,6 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
 - task: DotNetCoreCLI@2
   displayName: 'Build web project'
   inputs:
@@ -48,4 +44,5 @@ steps:
     azureSubscription: 'Jordan''s Subscription'
     appType: 'webApp'
     appName: 'JeopardyApiPipeline'
-    package: '$(build.artifactStagingDirectory)\**\*.zip'
+    package: '$(build.artifactStagingDirectory)\*.zip'
+
