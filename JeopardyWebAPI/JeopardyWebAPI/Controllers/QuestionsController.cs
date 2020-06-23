@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace JeopardyWebAPI.Controllers
@@ -15,8 +16,10 @@ namespace JeopardyWebAPI.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
+        #region Member variables
         private readonly IJeopardyRepository _repository;
         private readonly IMapper _mapper;
+        #endregion
 
         public QuestionsController(IJeopardyRepository repository, IMapper mapper)
         {
@@ -73,20 +76,27 @@ namespace JeopardyWebAPI.Controllers
             {
                 var result = await _repository.GetQuestionsByPoints(points);
 
-                var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
-
-                if(mappedResult == null)
+                if (result.Length > 0)
                 {
-                    return NotFound("No questions found");
-                }
+                    var mappedResult = _mapper.Map<IEnumerable<QuestionsModel>>(result);
 
-                //BAD REQUEST Note: Not sure if works or not
-                if (string.IsNullOrEmpty(points.ToString()) || points == 0)
+                    if (mappedResult == null)
+                    {
+                        return NotFound("No questions found");
+                    }
+
+                    //BAD REQUEST Note: Not sure if works or not
+                    if (string.IsNullOrEmpty(points.ToString()) || points == 0)
+                    {
+                        return BadRequest();
+                    }
+
+                    return Ok(mappedResult);
+                }
+                else
                 {
-                    return BadRequest();
+                    return BadRequest("Bad request, value not found or does not exist.");
                 }
-
-                return Ok(mappedResult);
             }
             catch (Exception ex)
             {
@@ -210,18 +220,12 @@ namespace JeopardyWebAPI.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<QuestionsModel>> Delete(int id, QuestionsModel model)
+        public async Task<ActionResult<QuestionsModel>> Delete(int id)
         {
             try
             {
                 var question = await _repository.GetQuestionById(id);
-                if (question == null) return NotFound();
-
-                //prevent deletion of a question that has a category attached
-                if (model.Category != null)
-                {
-                    return BadRequest("Not allowed or request not accepted");
-                }
+                if (question == null) return NotFound();                
 
                 _repository.DeleteQuestion(question);
 

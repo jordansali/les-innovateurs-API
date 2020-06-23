@@ -34,7 +34,31 @@ namespace JeopardyWebAPI.Test
                 new Questions() {Id = 31, QuestionEn = "TestQuestion 2", QuestionFr = "TestQuestion 2 en francais", AnswerEn = "TestAnswer 2", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
                 new Questions() {Id = 32, QuestionEn = "TestQuestion 3", QuestionFr = "TestQuestion 3 en francais", AnswerEn = "TestAnswer 3", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
                 new Questions() {Id = 33, QuestionEn = "TestQuestion 4", QuestionFr = "TestQuestion 4 en francais", AnswerEn = "TestAnswer 4", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
-                new Questions() {Id = 34, QuestionEn = "TestQuestion 5", QuestionFr = "TestQuestion 5 en francais", AnswerEn = "TestAnswer 5", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30}
+                new Questions() {Id = 34, QuestionEn = "TestQuestion 5", QuestionFr = "TestQuestion 5 en francais", AnswerEn = "TestAnswer 5", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30},
+
+                new Questions() {Id = 35, QuestionEn = "TestQuestion 6", QuestionFr = "TestQuestion 6 en francais", AnswerEn = "TestAnswer 6", AnswerFr = "TestAnswer 1 en francais", CategoryId = 12, Hint = "Test Hint 1", Points = 100, TimeLimit = 30},
+                new Questions() {Id = 36, QuestionEn = "TestQuestion 7", QuestionFr = "TestQuestion 7 en francais", AnswerEn = "TestAnswer 7", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
+                new Questions() {Id = 37, QuestionEn = "TestQuestion 8", QuestionFr = "TestQuestion 8 en francais", AnswerEn = "TestAnswer 8", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
+                new Questions() {Id = 38, QuestionEn = "TestQuestion 9", QuestionFr = "TestQuestion 9 en francais", AnswerEn = "TestAnswer 9", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
+                new Questions() {Id = 39, QuestionEn = "TestQuestion 10", QuestionFr = "TestQuestion 10 en francais", AnswerEn = "TestAnswer 10", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30},
+
+                new Questions() {Id = 40, QuestionEn = "TestQuestion 11", QuestionFr = "TestQuestion 11 en francais", AnswerEn = "TestAnswer 11", AnswerFr = "TestAnswer 1 en francais", CategoryId = 12, Hint = "Test Hint 1", Points = 100, TimeLimit = 30},
+                new Questions() {Id = 41, QuestionEn = "TestQuestion 12", QuestionFr = "TestQuestion 12 en francais", AnswerEn = "TestAnswer 12", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
+                new Questions() {Id = 42, QuestionEn = "TestQuestion 13", QuestionFr = "TestQuestion 13 en francais", AnswerEn = "TestAnswer 13", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
+                new Questions() {Id = 43, QuestionEn = "TestQuestion 14", QuestionFr = "TestQuestion 14 en francais", AnswerEn = "TestAnswer 14", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
+                new Questions() {Id = 44, QuestionEn = "TestQuestion 15", QuestionFr = "TestQuestion 15 en francais", AnswerEn = "TestAnswer 15", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30},
+
+                new Questions() {Id = 45, QuestionEn = "TestQuestion 16", QuestionFr = "TestQuestion 16 en francais", AnswerEn = "TestAnswer 16", AnswerFr = "TestAnswer 1 en francais", CategoryId = 12, Hint = "Test Hint 1", Points = 100, TimeLimit = 30},
+                new Questions() {Id = 46, QuestionEn = "TestQuestion 17", QuestionFr = "TestQuestion 17 en francais", AnswerEn = "TestAnswer 17", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
+                new Questions() {Id = 47, QuestionEn = "TestQuestion 18", QuestionFr = "TestQuestion 18 en francais", AnswerEn = "TestAnswer 18", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
+                new Questions() {Id = 48, QuestionEn = "TestQuestion 19", QuestionFr = "TestQuestion 19 en francais", AnswerEn = "TestAnswer 19", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
+                new Questions() {Id = 49, QuestionEn = "TestQuestion 20", QuestionFr = "TestQuestion 20 en francais", AnswerEn = "TestAnswer 20", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30},
+
+                new Questions() {Id = 50, QuestionEn = "TestQuestion 21", QuestionFr = "TestQuestion 21 en francais", AnswerEn = "TestAnswer 21", AnswerFr = "TestAnswer 1 en francais", CategoryId = 12, Hint = "Test Hint 1", Points = 100, TimeLimit = 30},
+                new Questions() {Id = 51, QuestionEn = "TestQuestion 22", QuestionFr = "TestQuestion 22 en francais", AnswerEn = "TestAnswer 22", AnswerFr = "TestAnswer 2 en francais", CategoryId = 13, Hint = "Test Hint 2", Points = 200, TimeLimit = 30},
+                new Questions() {Id = 52, QuestionEn = "TestQuestion 23", QuestionFr = "TestQuestion 23 en francais", AnswerEn = "TestAnswer 23", AnswerFr = "TestAnswer 3 en francais", CategoryId = 14, Hint = "Test Hint 3", Points = 300, TimeLimit = 30},
+                new Questions() {Id = 53, QuestionEn = "TestQuestion 24", QuestionFr = "TestQuestion 24 en francais", AnswerEn = "TestAnswer 24", AnswerFr = "TestAnswer 4 en francais", CategoryId = 15, Hint = "Test Hint 4", Points = 400, TimeLimit = 30},
+                new Questions() {Id = 54, QuestionEn = "TestQuestion 25", QuestionFr = "TestQuestion 25 en francais", AnswerEn = "TestAnswer 25", AnswerFr = "TestAnswer 5 en francais", CategoryId = 16, Hint = "Test Hint 5", Points = 500, TimeLimit = 30}
             };
 
         }
