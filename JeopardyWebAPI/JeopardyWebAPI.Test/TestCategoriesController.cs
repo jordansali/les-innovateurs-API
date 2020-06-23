@@ -100,6 +100,17 @@ namespace JeopardyWebAPI.Test
 
             Xunit.Assert.IsType<NoContentResult>(okRouteResult);            
         }
-               
+
+        /* Unit test methods to create:         
+        * Delete categories with questions
+        * Get category by Id that doesn't exist
+        * Post category without Category Name En
+        * Post category with Id that already exists*
+        * Put update for category that doesn't exist
+        * Put update with bad request (e.g. missing Id)
+        * Delete categories that doesn't exist
+        * No categories exist
+        */
+
     }
 }
