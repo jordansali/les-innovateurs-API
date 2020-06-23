@@ -21,6 +21,7 @@ namespace JeopardyWebAPI.Test
         public JeopardyRepositoryFake(JeopardyDbContext context) {
             this._context = context;
 
+
             _category = new List<Categories>()
             {
                 new Categories() {Id = 30, CategoryNameEn = "TestCat 1", CategoryNameFr = "TestCat 1 en francais"},
@@ -40,7 +41,6 @@ namespace JeopardyWebAPI.Test
             };
 
         }
-
 
         public void AddCategory(Categories category)
         {

@@ -7,15 +7,14 @@ using JeopardyWebAPI.Data.EFCore;
 using Microsoft.AspNetCore.Mvc;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using AutoMapper;
-using JeopardyWebAPI.Models;
-using JeopardyWebAPI.Data;
-using System.Net.WebSockets;
+using JeopardyWebAPI;
 
 namespace JeopardyWebAPI.Test
 {
     [TestClass]
     public class TestCategoriesController
     {
+
         readonly CategoriesController _controller;
         private readonly JeopardyDbContext testContext;
         readonly IJeopardyRepository _service;
@@ -38,6 +37,7 @@ namespace JeopardyWebAPI.Test
             _mapper = mapper;
 
             _service = new JeopardyRepositoryFake(testContext);
+
             _controller = new CategoriesController(_service, _mapper);
 
         }
@@ -99,7 +99,6 @@ namespace JeopardyWebAPI.Test
 
             Xunit.Assert.IsType<NoContentResult>(okRouteResult);            
         }
-
 
     }
 }
