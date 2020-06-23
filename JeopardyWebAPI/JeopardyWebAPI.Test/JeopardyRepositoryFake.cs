@@ -2,7 +2,6 @@
 using JeopardyWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +14,6 @@ namespace JeopardyWebAPI.Test
         private readonly List<Categories> _category;
         private readonly List<Questions> _questions;
         private readonly JeopardyDbContext _context;
-        readonly JeopardyRepositoryFake repositoryFake;
-
 
         public JeopardyRepositoryFake(JeopardyDbContext context) {
             this._context = context;
@@ -92,8 +89,7 @@ namespace JeopardyWebAPI.Test
         }
 
         public async Task<Categories> GetCategoryByCategoryNameEn(string nameEn)
-        {
-            // throw new NotImplementedException();
+        {            
             var query = _category;
             query = query.Where(c => c.CategoryNameEn == nameEn).ToList();
             var query2 = query.FirstOrDefault();
@@ -137,14 +133,11 @@ namespace JeopardyWebAPI.Test
             return query.ToArray();
         }
 
-       public async Task<bool> SaveChangesAsync()
-        {
-            //return (await _context.SaveChangesAsync()) > 0;
+        public async Task<bool> SaveChangesAsync()
+        {            
             return true;
         } 
-
       
-
         public async Task<Categories[]> GetAllCategories()
         {
             var query =  _category.ToArray();
@@ -163,6 +156,7 @@ namespace JeopardyWebAPI.Test
 
             return questions;
         }
+        
         public int[] GetRandomCategoryIds()
         {
             try
