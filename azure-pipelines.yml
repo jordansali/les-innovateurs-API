@@ -21,12 +21,20 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
+  displayName: 'Build web project'
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'build'
+    projects: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish and zip'
+  inputs:
+    command: publish
+    publishWebProjects: False
+    projects: $(solution)
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
 
 - task: VSTest@2
   inputs:
@@ -34,13 +42,10 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
+  displayName: 'Deploy Azure Web App'
   inputs:
-    ConnectionType: 'AzureRM'
     azureSubscription: 'Jordan''s Subscription'
     appType: 'webApp'
-    WebAppName: 'JeopardyApiPipeline'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'FELTgame'
-    SlotName: 'production'
-    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
+    appName: 'JeopardyApiPipeline'
+    package: '$(build.artifactStagingDirectory)\**\*.zip'
