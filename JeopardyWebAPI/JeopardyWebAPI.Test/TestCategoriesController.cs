@@ -9,6 +9,7 @@ using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using AutoMapper;
 using JeopardyWebAPI.Models;
 using JeopardyWebAPI.Data;
+using System.Net.WebSockets;
 
 namespace JeopardyWebAPI.Test
 {
@@ -20,6 +21,7 @@ namespace JeopardyWebAPI.Test
         readonly IJeopardyRepository _service;
         readonly IMapper _mapper;
         readonly CategoriesModel model;
+        readonly CategoriesModel updateModel;
 
         public TestCategoriesController() {
 
@@ -29,6 +31,8 @@ namespace JeopardyWebAPI.Test
             });
 
             model = new CategoriesModel() { Id = 35, CategoryNameEn = "FiveCATS", CategoryNameFr = "TestCat 5 en francais" };
+
+            updateModel = new CategoriesModel() { Id = 34, CategoryNameEn = "FiveCATEGORIES", CategoryNameFr = "TestCat 5 en francaisss" };
 
             var mapper = mappingConfig.CreateMapper(); // Use this mapper to instantiate your class
             _mapper = mapper;
@@ -58,10 +62,10 @@ namespace JeopardyWebAPI.Test
 
             // Act
             var okResult = await _controller.GetById(id);
-            var okResult2 = okResult.Result as OkObjectResult;
+            var okObjectResult = okResult.Result as OkObjectResult;
             
             // Assert
-            var item = Xunit.Assert.IsType<CategoriesModel>(okResult2.Value);
+            var item = Xunit.Assert.IsType<CategoriesModel>(okObjectResult.Value);
             Assert.AreEqual(id, item.Id);
         }
 
@@ -75,9 +79,26 @@ namespace JeopardyWebAPI.Test
             Xunit.Assert.NotNull(okRouteResult);            
         }
 
+        [Fact]
+        public async void PutCategory_UpdatesCategory() 
+        {
+            var okResult = await _controller.Put(updateModel);
+            var okRouteResult = okResult.Result as OkObjectResult;
 
+            Xunit.Assert.IsType<OkObjectResult>(okRouteResult);
+            Xunit.Assert.NotNull(okRouteResult);
+        }
 
+        [Fact]
+        public async void DeleteCategory_RemovesCategory() 
+        {
+            int Id = 31;
 
+            var okResult = await _controller.Delete(Id);
+            var okRouteResult = okResult.Result as NoContentResult;
+
+            Xunit.Assert.IsType<NoContentResult>(okRouteResult);            
+        }
 
 
     }
