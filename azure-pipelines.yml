@@ -29,7 +29,7 @@ steps:
     command: publish
     publishWebProjects: False
     projects: $(solution)
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--self-contained true --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
 - task: VSTest@2
