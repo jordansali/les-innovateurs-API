@@ -35,9 +35,11 @@ namespace JeopardyWebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            if(env.IsProduction() || env.IsStaging() || env.IsEnvironment("Staging") || env.IsEnvironment("Production"))
+            else
             {
-                app.UseExceptionHandler();
+                // Azure requires the following:
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
