@@ -22,7 +22,6 @@ steps:
   inputs:
     command: 'restore'
     projects: '$(solution)'
-    feedsToUse: 'config'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build web project'
