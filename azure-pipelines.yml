@@ -18,25 +18,34 @@ steps:
 - task: NuGetToolInstaller@1
 
 - task: DotNetCoreCLI@2
+  displayName: 'Restore'
+  inputs:
+    command: 'restore'
+    projects: '$(solution)'
+    feedsToUse: 'config'
+
+- task: DotNetCoreCLI@2
   displayName: 'Build web project'
   inputs:
     command: 'build'
     projects: '$(solution)'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Test'
+  inputs:
+    projects: '**/*Test/*.csproj'
+    command: 'test'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish and zip'
   inputs:
     command: publish
-    publishWebProjects: False
-    projects: $(solution)
-    arguments: '--framework netcoreapp3.1 --runtime win-x64 --self-contained true --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    publishWebProjects: True
+    projects: '$(solution)'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
 
 - task: AzureWebApp@1
   displayName: 'Deploy Azure Web App'
