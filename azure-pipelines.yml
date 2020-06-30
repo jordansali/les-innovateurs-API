@@ -29,7 +29,7 @@ steps:
     command: publish
     publishWebProjects: False
     projects: $(solution)
-    arguments: '--runtime win-x64 --self-contained true --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--framework netcoreapp3.1 --runtime win-x64 --self-contained true --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
 - task: VSTest@2
